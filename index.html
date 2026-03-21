@@ -1067,7 +1067,6 @@ document.querySelectorAll('.toc a').forEach(a => {
   }
   
   function formatDesc(desc) {
-    if (!text) return '';
     if (!desc) return '';
     return desc
       .replace(/'?\{'([^}]+)'\}?/g, '<span class="skill-ref">$1</span>')
