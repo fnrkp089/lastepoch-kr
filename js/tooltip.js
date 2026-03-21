@@ -8,7 +8,6 @@
     return;
   }
 
-  // ── 중복 노드 매핑 구축 (Intensity__블랙홀 등) ──
   var multiTips = {};
   for (var k in tips) {
     var sep = k.indexOf('__');
@@ -80,33 +79,70 @@
     return h;
   }
 
-  // ── 컨텍스트 기반 팁 검색 ──
+  function getNearestCardHead(el) {
+    var node = el;
+    while (node) {
+      var card = node.closest ? node.closest('.skill-card') : null;
+      if (card) {
+        var h = card.querySelector('.card-head');
+        if (h) return h.textContent;
+      }
+      var sib = node.previousElementSibling;
+      while (sib) {
+        if (sib.classList && sib.classList.contains('skill-card')) {
+          var h2 = sib.querySelector('.card-head');
+          if (h2) return h2.textContent;
+        }
+        var inner = sib.querySelector ? sib.querySelector('.skill-card:last-child') : null;
+        if (inner) {
+          var h3 = inner.querySelector('.card-head');
+          if (h3) return h3.textContent;
+        }
+        sib = sib.previousElementSibling;
+      }
+      node = node.parentElement;
+    }
+    return '';
+  }
+
   function findTip(en, textNode) {
-    // 1. 직접 매칭
     if (tips[en]) return tips[en];
-    // 2. 중복 노드 → 부모 skill-card에서 트리명 추출
     var candidates = multiTips[en];
     if (!candidates || candidates.length === 0) return null;
-    // 부모에서 card-head 찾기
-    var el = textNode.parentNode;
-    while (el && !el.classList?.contains('skill-card')) {
-      el = el.parentElement;
-    }
-    if (el) {
-      var cardHead = el.querySelector('.card-head');
-      if (cardHead) {
-        var headText = cardHead.textContent;
-        for (var i = 0; i < candidates.length; i++) {
-          var treeName = tips[candidates[i]].tree;
-          if (headText.indexOf(treeName) > -1) return tips[candidates[i]];
+    if (candidates.length === 1) return tips[candidates[0]];
+
+    var headText = getNearestCardHead(textNode.parentNode || textNode);
+    if (headText) {
+      for (var i = 0; i < candidates.length; i++) {
+        if (headText.indexOf(tips[candidates[i]].tree) > -1) return tips[candidates[i]];
+      }
+      var koName = headText.replace(/[A-Za-z\'\-]+/g, '').replace(/[신규변경삭제▾▸]+/g, '').replace(/\s+/g, ' ').trim();
+      if (koName.length >= 2) {
+        for (var j = 0; j < candidates.length; j++) {
+          var desc = tips[candidates[j]].desc || '';
+          if (desc.indexOf(koName) > -1) return tips[candidates[j]];
         }
       }
     }
-    // 3. fallback: 첫 번째 후보
-    return tips[candidates[0]];
+
+    var parentText = '';
+    var p = textNode.parentNode;
+    while (p && p.tagName !== 'SECTION' && p.id === '') p = p.parentElement;
+    if (p) parentText = p.textContent.substring(0, 1000);
+    var bestScore = -1;
+    var bestIdx = 0;
+    for (var m = 0; m < candidates.length; m++) {
+      var d = tips[candidates[m]].desc || '';
+      var score = 0;
+      var words = d.split(/[\s,.]+/).filter(function(w) { return w.length >= 2; });
+      for (var w = 0; w < words.length; w++) {
+        if (parentText.indexOf(words[w]) > -1) score++;
+      }
+      if (score > bestScore) { bestScore = score; bestIdx = m; }
+    }
+    return tips[candidates[bestIdx]];
   }
 
-  // ── 섹션별 적용 ──
   var sectionIds = [
     'rogue-new','rogue-changes','mage-changes','acolyte-changes',
     'primalist-changes','sentinel-changes','unique-changes','set-changes'
