@@ -1066,37 +1066,42 @@ document.querySelectorAll('.toc a').forEach(a => {
     return;
   }
   
-  function formatDesc(desc) {
-    if (!desc) return '';
-    return desc
-      .replace(/'?\{'([^}]+)'\}?/g, '<span class="skill-ref">$1</span>')
-      .replace(/\[(\d+[\.,]?\d*[%]?)\]/g, '<span class="num-ref">$1</span>');
+  function formatDesc(text) {
+    if (!text) return '';
+    var res = text.replace(/\[(\d+(?:\.\d+)?),\s*(\d+(?:\.\d+)?),\s*(\d+)\]/g, function(m,a,b) { return '(' + a + '~' + b + ')'; });
+    return res;
   }
-  
   function buildUniquePopup(tip, en) {
     var h = '';
     if (tip.sp) {
-      var scale = 138 / Math.max(Math.abs(tip.sp[2]), Math.abs(tip.sp[3]));
+      var maxDim = Math.max(Math.abs(tip.sp[2]), Math.abs(tip.sp[3]));
+      var scale = 80 / maxDim;
       var bgSizeW = 3529 * scale;
       var bgSizeH = 3470 * scale;
       var bgX = tip.sp[0] * scale;
       var bgY = tip.sp[1] * scale;
-      h += '<div style="width:' + (Math.abs(tip.sp[2])*scale) + 'px;height:' + (Math.abs(tip.sp[3])*scale) + 'px;background:url(https://www.lastepochtools.com/data/version140/db/res/ffce45425d07007cec794e0d051efb5c.webp) ' + bgX + 'px ' + bgY + 'px/' + bgSizeW + 'px ' + bgSizeH + 'px no-repeat;margin:0 auto 8px"></div>';
+      h += '<div style="width:' + (Math.abs(tip.sp[2])*scale) + 'px;height:' + (Math.abs(tip.sp[3])*scale) + 'px;background:url(https://www.lastepochtools.com/data/version140/db/res/ffce45425d07007cec794e0d051efb5c.webp) ' + bgX + 'px ' + bgY + 'px/' + bgSizeW + 'px ' + bgSizeH + 'px no-repeat;margin:0 auto 6px"></div>';
     }
-    h += '<div style="color:#b4722d;font-weight:bold;font-size:15px">' + tip.ko + '</div>';
-    if (tip.base) h += '<div style="color:#888;font-size:12px;margin-bottom:6px">' + tip.base + '</div>';
+    h += '<div style="color:#b4722d;font-weight:bold;font-size:14px">' + (tip.ko || en) + '</div>';
+    if (tip.base) h += '<div style="color:#888;font-size:11px;margin-bottom:4px">' + tip.base + '</div>';
     if (tip.implicits && tip.implicits.length > 0) {
-      h += '<div style="color:#aaa;font-size:11px;margin-top:4px;border-bottom:1px solid #444;padding-bottom:2px">\uAE30\uBCF8 \uC18D\uC131</div>';
-      tip.implicits.forEach(function(imp) { h += '<div style="color:#7c7cef;font-size:12px;margin:2px 0">' + imp + '</div>'; });
+      h += '<div style="color:#aaa;font-size:10px;margin-top:4px;padding-bottom:2px;border-bottom:1px solid #444">\uAE30\uBCF8 \uC18D\uC131</div>';
+      tip.implicits.forEach(function(imp) {
+        h += '<div style="color:#7c7cef;font-size:11px;padding:2px 4px;margin:1px 0;background:rgba(124,124,239,0.06);border-radius:3px">' + imp + '</div>';
+      });
     }
     if (tip.mods && tip.mods.length > 0) {
-      h += '<div style="color:#aaa;font-size:11px;margin-top:4px;border-bottom:1px solid #444;padding-bottom:2px">\uACE0\uC720 \uC635\uC158</div>';
-      tip.mods.forEach(function(mod) { h += '<div style="color:#c8c8c8;font-size:12px;margin:2px 0">' + mod.replace(/\n/g, '<br>') + '</div>'; });
+      h += '<div style="color:#aaa;font-size:10px;margin-top:4px;padding-bottom:2px;border-bottom:1px solid #444">\uACE0\uC720 \uC635\uC158</div>';
+      tip.mods.forEach(function(mod) {
+        h += '<div style="color:#c8c8c8;font-size:11px;padding:3px 4px;margin:2px 0;background:rgba(200,200,200,0.06);border-left:2px solid #555;border-radius:2px">' + (mod || '').replace(/\n/g, '<br style=\"margin:2px 0\">') + '</div>';
+      });
     }
     if (tip.tips && tip.tips.length > 0 && !(tip.mods && tip.mods.length > 0)) {
-      tip.tips.forEach(function(t) { h += '<div style="color:#c8c8c8;font-size:12px;margin:2px 0">' + formatDesc(t) + '</div>'; });
+      tip.tips.forEach(function(t) {
+        h += '<div style="color:#c8c8c8;font-size:11px;padding:3px 4px;margin:2px 0;background:rgba(200,200,200,0.06);border-left:2px solid #555;border-radius:2px">' + formatDesc(t) + '</div>';
+      });
     }
-    if (tip.lore) h += '<div style="color:#b4722d;font-style:italic;font-size:11px;margin-top:6px;border-top:1px solid #444;padding-top:4px">' + tip.lore + '</div>';
+    if (tip.lore) h += '<div style="color:#b4722d;font-style:italic;font-size:10px;margin-top:4px;border-top:1px solid #444;padding-top:3px">' + tip.lore + '</div>';
     return h;
   }
   function buildNodePopup(tip, en) {
