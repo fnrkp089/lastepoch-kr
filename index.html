@@ -329,6 +329,76 @@ a:hover { text-decoration: underline; }
 }
 
 .footer a { color: var(--gold-dim); }
+
+/* 툴팁 */
+.tt {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted var(--gold-dim);
+}
+.tt:hover { color: var(--gold-bright); }
+
+.tt-popup {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  max-width: 90vw;
+  background: #1a1a2e;
+  border: 1px solid var(--gold-dim);
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+
+.tt:hover .tt-popup { display: block; }
+
+.tt-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--gold-dim);
+}
+
+.tt-name {
+  font-weight: 700;
+  color: var(--gold-bright);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.tt-tree {
+  font-size: 11px;
+  color: var(--purple);
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.tt-desc {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.tt-type {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.tt-type.skill { background: #2a4a2a; color: #6a4; }
+.tt-type.node { background: #2a2a4a; color: #4a8cc9; }
+.tt-type.unique { background: #4a3a2a; color: #c93; }
+
 </style>
 </head>
 <body>
@@ -518,6 +588,87 @@ document.querySelectorAll('.toc a').forEach(a => {
     document.getElementById('toc').classList.remove('show');
   });
 });
+</script>
+
+
+<script>
+(async function() {
+  var tips;
+  try {
+    var res = await fetch('https://raw.githubusercontent.com/fnrkp089/lastepoch-kr/main/tooltips.json');
+    tips = await res.json();
+  } catch(e) {
+    console.log('tooltips.json not loaded');
+    return;
+  }
+  
+  var walker = document.createTreeWalker(
+    document.querySelector('.content'),
+    NodeFilter.SHOW_TEXT,
+    null, false
+  );
+  
+  var textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  
+  var count = 0;
+  textNodes.forEach(function(node) {
+    var text = node.textContent;
+    if (!text || !node.parentNode) return;
+    
+    var regex = /\(([A-Z][a-zA-Z\s\'\-]{2,50})\)/g;
+    var match;
+    var matches = [];
+    while ((match = regex.exec(text)) !== null) {
+      var en = match[1].trim();
+      if (tips[en]) {
+        matches.push({s: match.index, e: match.index + match[0].length, en: en, tip: tips[en]});
+      }
+    }
+    
+    if (matches.length === 0) return;
+    
+    var frag = document.createDocumentFragment();
+    var lastIdx = 0;
+    
+    matches.forEach(function(m) {
+      if (m.s > lastIdx) {
+        frag.appendChild(document.createTextNode(text.substring(lastIdx, m.s)));
+      }
+      
+      var span = document.createElement('span');
+      span.className = 'tt';
+      span.textContent = text.substring(m.s, m.e);
+      
+      var popup = document.createElement('div');
+      popup.className = 'tt-popup';
+      
+      var typeLabels = {skill: '\uc2a4\ud0ac', node: '\ub178\ub4dc', unique: '\uc720\ub2c8\ud06c'};
+      var typeLabel = typeLabels[m.tip.type] || '';
+      var typeClass = m.tip.type || '';
+      
+      var h = '<div class="tt-name">' + m.tip.ko + ' (' + m.en + ')' +
+              '<span class="tt-type ' + typeClass + '">' + typeLabel + '</span></div>';
+      if (m.tip.tree) h += '<div class="tt-tree">' + m.tip.tree + ' \ud2b8\ub9ac</div>';
+      if (m.tip.desc) h += '<div class="tt-desc">' + m.tip.desc + '</div>';
+      
+      popup.innerHTML = h;
+      span.appendChild(popup);
+      frag.appendChild(span);
+      
+      lastIdx = m.e;
+      count++;
+    });
+    
+    if (lastIdx < text.length) {
+      frag.appendChild(document.createTextNode(text.substring(lastIdx)));
+    }
+    
+    node.parentNode.replaceChild(frag, node);
+  });
+  
+  console.log('Tooltips applied: ' + count);
+})();
 </script>
 
 </body>
