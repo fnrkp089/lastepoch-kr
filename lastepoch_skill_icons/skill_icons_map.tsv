@@ -1,0 +1,471 @@
+﻿filename	english	korean	sprite_id	x	y	w	h
+abyssal_echoes.png	Abyssal Echoes	심연의 메아리	r-12	130	453	64	64
+serpent_strike.png	Serpent Strike	뱀의 맹공	r-14	585	713	64	64
+mark_for_death.png	Mark For Death	죽음의 표식	r-17	2275	518	64	64
+holy_flame_burst.png	Holy Flame Burst	성스러운 불꽃 폭발	r-24	1950	1883	64	64
+poison_nova.png	Poison Nova	독 노바	r-32	2144	1948	64	64
+fissure.png	Fissure	균탁	r-33	1625	2013	64	64
+flame_burst.png	Flame Burst	불꽃 폭발	r-24	1950	1883	64	64
+spark_charge.png	Spark Charge	전류 충전	r-42	1755	1753	64	64
+bone_curse.png	Bone Curse	뼈의 저주	r-45	65	1493	64	64
+spirit_plague.png	Spirit Plague	영혼 역병	r-46	130	1363	64	64
+shadow_daggers.png	Shadow Daggers	그림자 단검	r-63	1560	1233	64	64
+smoke_bomb.png	Smoke Bomb	연막탄	r-68	2015	1558	64	64
+frost_wall.png	Frost Wall	서리 벽	r-87	1625	1493	64	64
+flame_ward.png	Flame Ward	불꽃 와드	r-88	1365	1233	64	64
+flame_rush.png	Flame Rush	불꽃 돌진	r-91	455	1363	64	64
+capsuleman_basic_explosion.png	CapsuleMan Basic Explosion	캡슐 맨 기본 폭발	r-92	650	1493	64	64
+ghostflame.png	Ghostflame	심연의 메아리	r-99	455	843	64	64
+chaos_bolts.png	Chaos Bolts	혼돈의 화살	r-102	715	1558	64	64
+shocking_impact.png	Shocking Impact	쇼킹 충격	r-103	1300	1428	64	64
+shocking_impact.png	Shocking Impact	쇼킹 충격	r-103	1300	1428	64	64
+profane_veil.png	Profane Veil	불경스런 장막	r-105	975	1688	64	64
+chthonic_fissure.png	Chthonic Fissure	저승의 균열	r-107	390	1688	64	64
+tormenting_spirit.png	Tormenting Spirit	유령 괴로힘	r-108	2145	843	64	64
+falcon_strikes.png	Falcon Strikes	매의 타격	r-114	1105	1298	64	64
+shield_throw.png	Shield Throw	방패 투척	r-116	845	1558	64	64
+dive_bomb.png	Dive Bomb	급강하 폭탄	r-117	1235	1428	64	64
+healing_hands.png	Healing Hands	치유의 손	r-121	2135	713	64	64
+flay.png	Flay	벗기기	r-127	650	1038	64	64
+blood_eruption.png	Blood Eruption	피 분출	r-129	715	1428	64	64
+teleport.png	Teleport	순간 이동	r-127	650	1038	64	64
+fireball.png	Fireball	파이어볼	r-135	2200	713	64	64
+ice_nova.png	Ice Nova	얼음 노바	r-136	65	908	64	64
+ice_vortex.png	Ice Vortex	얼음 회오리	r-138	910	1818	64	64
+meteor.png	Meteor	유성	r-103	1300	1428	64	64
+summon_wolf.png	Summon Wolf	늑대 소환	r-139	780	1688	64	64
+howl.png	Howl	울부짖기	r-140	1495	453	64	64
+lightning_nova.png	Lightning Nova	번개 노바	r-141	1560	323	64	64
+fire_nova.png	Fire Nova	화염 노바	r-92	650	1493	64	64
+elemental_nova.png	Elemental Nova	원소 노바	r-142	903	129	64	64
+freezing_cascade.png	Freezing Cascade	얼어붙은 폭포	r-143	1170	323	64	64
+infernal_aura.png	Infernal Aura	지옥의 아우라	r-144	1690	453	64	64
+black_hole.png	Black Hole	블랙홀	r-146	1950	713	64	64
+fury_leap.png	Fury Leap	분노의 도약	r-147	1810	583	64	64
+swipe.png	Swipe	후려치기	r-148	974	1948	64	64
+swipe.png	Swipe	스와이프	r-148	974	1948	64	64
+ice_thorns.png	Ice Thorns	얼음 가시	r-149	380	2078	64	64
+tornado.png	Tornado	토네이도	r-150	1625	453	64	64
+storm_bolt.png	Storm Bolt	폭풍 화살	r-85	520	1363	64	64
+thorn_shield.png	Thorn Shield	가시 방패	r-151	1560	583	64	64
+thorn_shield_burst.png	Thorn Shield Burst	가시 방패 폭발	r-152	1820	713	64	64
+mana_strike.png	Mana Strike	마나 맹공	r-155	1365	323	64	64
+summon_vines.png	Summon Vines	덩굴 소환	r-19	260	1883	64	64
+spirit_thorns.png	Spirit Thorns	영혼 가시	r-83	130	1623	64	64
+summon_vine.png	Summon Vine	덩굴 소환	r-156	968	129	64	64
+shrapnel.png	Shrapnel	파편	r-158	643	2208	64	64
+lightning_blast.png	Lightning Blast	번개 폭발	r-153	1940	583	64	64
+ice_ward.png	Ice Ward	얼음 와드	r-159	679	2078	64	64
+glacier.png	Glacier	빙하	r-160	909	1948	64	64
+acid_flask.png	Acid Flask	산성 플라스크	r-161	502	2078	64	64
+frost_nova.png	Frost Nova	서리 노바	r-163	1040	1818	64	64
+summon_claw_totem.png	Summon Claw Totem	발톱 토템 소환	r-165	874	2078	64	64
+attack.png	Attack	공격	r-166	773	2208	64	64
+summon_bear.png	Summon Bear	곰 소환	r-168	1430	453	64	64
+bear_roar.png	Bear Roar	곰의 포효	r-169	1625	323	64	64
+summon_thorn_totem.png	Summon Thorn Totem	가시 토템 소환	r-170	578	2208	64	64
+summon_primal_serpent.png	Summon Primal Serpent	태고의 뱀 소환	r-171	809	2078	64	64
+summon_illusory_tree.png	Summon Illusory Tree	나무 환영 소환	r-172	838	2208	64	64
+swarm_of_bees.png	Swarm of Bees	벌떼	r-173	65	2338	64	64
+static_orb.png	Static Orb	정전기 오브	r-174	789	1948	64	64
+charged_ground.png	Charged Ground	대지 충전	r-42	1755	1753	64	64
+spark_nova.png	Spark Nova	전류 노바	r-175	567	2078	64	64
+entangling_roots.png	Entangling Roots	얽어매는 뿌리	r-176	640	1948	64	64
+shield_rush.png	Shield Rush	방패 돌진	r-178	1560	453	64	64
+lunge.png	Lunge	돌격	r-179	1625	583	64	64
+smite.png	Smite	강타	r-177	1179	1818	64	64
+anomaly.png	Anomaly	변칙	r-181	1033	129	64	64
+anomaly.png	Anomaly	변칙	r-182	1820	323	64	64
+summon_spriggan.png	Summon Spriggan	스프리건 소환	r-183	1235	453	64	64
+thorn_volley.png	Thorn Volley	가시 투하	r-184	2135	583	64	64
+rejuvenating_wind.png	Rejuvenating Wind	회춘의 바람	r-185	1625	713	64	64
+shrapnel.png	Shrapnel	파편	r-186	1040	583	64	64
+explosive_ground.png	Explosive Ground	폭발성 대지	r-187	1950	453	64	64
+ravaging_aura.png	Ravaging Aura	유린의 아우라	r-188	1569	1818	64	64
+abyssal_orb.png	Abyssal Orb	심연의 오브	r-191	1560	713	64	64
+void_rift.png	Void Rift	공허 균열	r-192	1170	583	64	64
+devouring_orb.png	Devouring Orb	포식 오브	r-193	1885	453	64	64
+sundering_thorns.png	Sundering Thorns	절단 가시	r-194	780	323	64	64
+rive.png	Rive	베어내기	r-195	1098	129	64	64
+rive.png	Rive	베어내기	r-196	1690	323	64	64
+rive.png	Rive	베어내기	r-197	1300	453	64	64
+spirit_wolves.png	Spirit Wolves	영혼 늑대	r-199	1021	2208	64	64
+warpath.png	Warpath	출정	r-200	1820	1883	64	64
+volatile_reversal.png	Volatile Reversal	신속 역행	r-9	1300	1233	64	64
+void_beam.png	Void Beam	공허 빛줄기	r-203	1885	2013	64	64
+void_beam.png	Void Beam	공허 빛줄기	r-203	1885	2013	64	64
+hammer_throw.png	Hammer Throw	망치 투척	r-204	2061	2208	64	64
+vengeance.png	Vengeance	복수심	r-205	1300	2273	64	64
+riposte.png	Riposte	응수	r-206	1625	2143	64	64
+iron_blade.png	Iron Blade	철검	r-207	1843	2078	64	64
+void_beam.png	Void Beam	공허 빛줄기	r-203	1885	2013	64	64
+void_eruption.png	Void Eruption	공허 분출	r-191	1560	713	64	64
+magma_shards.png	Magma Shards	용암 조각	r-186	1040	583	64	64
+storm_orb.png	Storm Orb	폭풍 오브	r-141	1560	323	64	64
+summon_skeleton.png	Summon Skeleton	해골 소환	r-209	1820	258	64	64
+bone_armor.png	Bone Armor	뼈 철갑	r-211	1365	2273	64	64
+cremate.png	Cremate	화장	r-214	2145	1883	64	64
+summon_skeleton_harvester.png	Summon Skeleton Harvester	해골 수확자 소환	r-216	2014	1948	64	64
+hungering_souls.png	Hungering Souls	굶주린 영혼	r-218	650	713	64	64
+necrotic_mortar.png	Necrotic Mortar	괴사의 포탄	r-219	780	648	64	64
+sacrifice.png	Sacrifice	희생	r-220	2268	129	64	64
+profane_oblation.png	Profane Oblation	모독 봉납물	r-220	2268	129	64	64
+rip_blood.png	Rip Blood	채혈	r-225	1105	648	64	64
+blood_splatter.png	Blood Splatter	피의 작렬	r-225	1105	648	64	64
+bone_nova.png	Bone Nova	뼈 노바	r-226	520	518	64	64
+summon_blood_specter.png	Summon Blood Specter	블러드 스펙터을 소환하기	r-227	130	583	64	64
+marrow_shards.png	Marrow Shards	뼈대 조각	r-228	1755	1883	64	64
+summon_revenant.png	Summon Revenant	귀환자 소환	r-229	195	1883	64	64
+summon_wraith.png	Summon Wraith	망령 소환	r-224	390	713	64	64
+wandering_spirits.png	Wandering Spirits	유랑 영혼	r-231	845	648	64	64
+flame_reave.png	Flame Reave	불꽃 가르기	r-232	780	518	64	64
+summon_bone_golem.png	Summon Bone Golem	뼈다귀 골렘 소환	r-233	65	583	64	64
+bone_shatter.png	Bone Shatter	뼈 파편	r-226	520	518	64	64
+collapse.png	Collapse	붕괴	r-146	1950	713	64	64
+freezing_grasp.png	Freezing Grasp	얼어붙은 손아귀	r-136	65	908	64	64
+sanguine_orb.png	Sanguine Orb	혈색 보주	r-230	455	713	64	64
+wall_of_fire.png	Wall of Fire	화염벽	r-135	2200	713	64	64
+collapsing_decay.png	Collapsing Decay	붕괴의 부식	r-115	910	1428	64	64
+fire_aura.png	Fire Aura	화염 아우라	r-144	1690	453	64	64
+snap_freeze.png	Snap Freeze	순간 결빙	r-115	910	1428	64	64
+shatter_strike.png	Shatter Strike	격파 맹공	r-240	1235	908	64	64
+summon_sabertooth.png	Summon Sabertooth	세이버투스 소환	r-241	1040	973	64	64
+flurry_swipes.png	Flurry Swipes	질풍 후려치기	r-40	2080	1558	64	64
+arcane_lightning.png	Arcane Lightning	비전 번개	r-153	1940	583	64	64
+retribution.png	Retribution	응징	r-242	845	843	64	64
+axe_throw.png	Axe Throw	도끼 투척	r-243	1430	778	64	64
+ring_of_shields.png	Ring Of Shields	공전하는 방패	r-244	1560	1103	64	64
+rebuke.png	Rebuke	견책	r-245	1950	1038	64	64
+smelter_s_wrath.png	Smelter's Wrath	용광로의 분노	r-246	2145	1168	64	64
+focus.png	Focus	포커스	r-247	1430	1233	64	64
+teleport.png	Teleport	순간 이동	r-128	1300	1298	64	64
+teleport_return.png	Teleport Return	순간 이동 귀환	r-248	1690	1493	64	64
+surge.png	Surge	급등	r-249	455	1493	64	64
+summon_bone_prison.png	Summon Bone Prison	뼈 감옥 소환	r-250	1235	1103	64	64
+summon_mirror_image.png	Summon Mirror Image	거울상 소환	r-251	2015	1038	64	64
+harvest.png	Harvest	수확	r-253	1885	1233	64	64
+symbols_of_hope.png	Symbols of Hope	희망 기호	r-254	1560	908	64	64
+holy_aura.png	Holy Aura	성스러운 아우라	r-255	975	973	64	64
+eterra_s_blessing.png	Eterra's Blessing	에테라의 축복	r-256	1040	843	64	64
+summon_storm_totem.png	Summon Storm Totem	폭풍 토템 소환	r-257	975	778	64	64
+judgement.png	Judgement	심판	r-259	1885	1623	64	64
+consecrated_ground.png	Consecrated Ground	축성 받은 땅	r-260	2015	1493	64	64
+lightning_wave.png	Lightning Wave	번개 파도	r-93	1495	1493	64	64
+blizzard.png	Blizzard	눈보라	r-262	195	1363	64	64
+roar.png	Roar	포효	r-60	1495	1103	64	64
+swipe.png	Swipe	후려치기	r-263	2080	1363	64	64
+swipe.png	Swipe	후려치기	r-263	2080	1363	64	64
+rampage.png	Rampage	광포	r-235	2145	258	64	64
+avalanche.png	Avalanche	눈사태	r-264	2210	1558	64	64
+avalanche.png	Avalanche	눈사태	r-264	2210	1558	64	64
+holy_symbol.png	Holy Symbol	성스러운 상징	r-29	715	648	64	64
+divine_bolt.png	Divine Bolt	신성한 화살	r-265	1755	1623	64	64
+shadow_cascade.png	Shadow Cascade	그림자 폭포	r-266	1690	1753	64	64
+human_form.png	Human Form	인간 형태	r-268	1755	908	64	64
+maul.png	Maul	마울	r-234	2203	129	64	64
+warcry.png	Warcry	함성	r-269	650	973	64	64
+forge_strike.png	Forge Strike	쇳덩이 맹공	r-271	1430	1623	64	64
+summon_forged_weapon.png	Summon Forged Weapon	단조 무기 소환	r-272	2015	1753	64	64
+manifest_armor.png	Manifest Armor	방어구 육화	r-273	2275	1688	64	64
+spriggan_form.png	Spriggan Form	스프리건 형태	r-277	2145	1363	64	64
+summon_vines.png	Summon Vines	덩굴 소환	r-279	1625	1038	64	64
+summon_healing_totem.png	Summon Healing Totem	치유 토템 소환	r-77	1690	1233	64	64
+flurry.png	Flurry	질풍	r-281	520	843	64	64
+reap.png	Reap	숨 거두기	r-219	780	648	64	64
+transplant.png	Transplant	이식	r-287	1040	1103	64	64
+summon_skeletal_mage.png	Summon Skeletal Mage	해골 마법사 소환	r-217	1560	2013	64	64
+reaper_form.png	Reaper Form	저승사자 형태	r-288	1560	1363	64	64
+soul_eruption.png	Soul Eruption	영혼 분출	r-218	650	713	64	64
+summon_scorpion.png	Summon Scorpion	스콜피온 소환	r-289	585	1363	64	64
+venom_nova.png	Venom Nova	독액 노바	r-290	1235	1233	64	64
+ice_barrage.png	Ice Barrage	얼음 세례	r-291	130	1233	64	64
+fire_burst.png	Fire Burst	화염 폭발	r-24	1950	1883	64	64
+energy_wave.png	Energy Wave	에너지 파도	r-293	975	1103	64	64
+blood_pool.png	Blood Pool	피 웅덩이	r-294	1560	778	64	64
+aura_of_decay.png	Aura Of Decay	부식의 아우라	r-295	585	843	64	64
+putrid_bomb.png	Putrid Bomb	악취 나는 폭탄	r-161	502	2078	64	64
+soul_feast.png	Soul Feast	영혼 포식	r-296	520	973	64	64
+shurikens.png	Shurikens	표창	r-297	1885	908	64	64
+summon_coldstone_elemental.png	Summon Coldstone Elemental	콜드스톤을 소환하기	r-298	195	1753	64	64
+shield_throw.png	Shield Throw	방패 투척	r-116	845	1558	64	64
+lava_burst.png	Lava Burst	용암 폭발	r-299	1625	1753	64	64
+tempest_strike.png	Tempest Strike	폭풍 맹공	r-300	260	1558	64	64
+frigid_tempest.png	Frigid Tempest	차가운 폭풍	r-301	1950	1428	64	64
+tempest_strike.png	Tempest Strike	폭풍 맹공	r-300	260	1558	64	64
+wind_tempest.png	Wind Tempest	바람 폭풍	r-150	1625	453	64	64
+tempest_strike.png	Tempest Strike	폭풍 맹공	r-300	260	1558	64	64
+thunder_tempest.png	Thunder Tempest	번개 폭풍	r-93	1495	1493	64	64
+summon_storm_sprite.png	Summon Storm Sprite	폭풍 요괴 소환	r-258	1950	1558	64	64
+detonate_ground.png	Detonate Ground	대지 폭발	r-33	1625	2013	64	64
+summon_frenzy_totem.png	Summon Frenzy Totem	광란 토템 소환	r-304	1560	1558	64	64
+vale_spirit.png	Vale Spirit	계곡 영혼	r-306	195	1818	64	64
+summon_skeleton.png	Summon Skeleton	해골 소환	r-221	1885	258	64	64
+summon_death_knight.png	Summon Death Knight	죽음의 기사 소환	r-309	1625	973	64	64
+ice_shard.png	Ice Shard	얼음 조각	r-311	65	1688	64	64
+fireball.png	Fireball	파이어볼	r-135	2200	713	64	64
+static.png	Static	정전	r-313	1755	1688	64	64
+zap.png	Zap	전기 충격	r-153	1940	583	64	64
+blood_tether.png	Blood Tether	피의 사슬	r-317	260	1428	64	64
+summon_soul_wisp.png	Summon Soul Wisp	영혼 혼불 소환	r-306	195	1818	64	64
+kinetic_burst.png	Kinetic Burst	운동성 폭발	r-163	1040	1818	64	64
+poison_pool.png	Poison Pool	포이즌 풀	r-318	65	1168	64	64
+summon_baby_scorpion.png	Summon Baby Scorpion	전갈 새끼를 소환	r-289	585	1363	64	64
+ice_shard.png	Ice Shard	얼음 조각	r-311	65	1688	64	64
+disintegrate.png	Disintegrate	붕괴	r-320	715	908	64	64
+tundra_nova.png	Tundra Nova	동토 노바	r-136	65	908	64	64
+holy_eruption.png	Holy Eruption	성스러운 분출	r-321	1755	973	64	64
+maelstrom.png	Maelstrom	소용돌이	r-138	910	1818	64	64
+forge_breath.png	Forge Breath	대장간 숨결	r-232	780	518	64	64
+tsunami.png	Tsunami	쓰나미	r-306	195	1818	64	64
+summon_raptor.png	Summon Raptor	공룡 소환	r-322	1690	843	64	64
+rampage.png	Rampage	광포	r-323	390	778	64	64
+fissure.png	Fissure	균탁	r-33	1625	2013	64	64
+raptor_screech.png	Raptor Screech	랩터의 비명	r-324	2145	1103	64	64
+charge.png	Charge	충전	r-270	2275	1558	64	64
+whirlwind_strike.png	Whirlwind Strike	선풍 맹공	r-303	325	1428	64	64
+earthquake.png	Earthquake	지진	r-145	1365	583	64	64
+aftershock.png	Aftershock	여진	r-145	1365	583	64	64
+divine_flare.png	Divine Flare	신성한 불길	r-260	2015	1493	64	64
+earthquake.png	Earthquake	지진	r-145	1365	583	64	64
+shift.png	Shift	공간 도약	r-303	325	1428	64	64
+detonating_arrow.png	Detonating Arrow	폭렬 화살	r-325	1170	1038	64	64
+arcane_ascendance.png	Arcane Ascendance	비전 상승	r-44	2145	1493	64	64
+arcane_ascendance.png	Arcane Ascendance	비전 상승	r-327	130	1298	64	64
+summon_bee.png	Summon Bee	벌 소환	r-173	65	2338	64	64
+furnace.png	Furnace	용광로	r-186	1040	583	64	64
+sciurine_rage.png	Sciurine Rage	다람쥐의 격분	r-332	1365	1168	64	64
+summon_arek_s_flesh.png	Summon Arek's Flesh	아렉의 살 소환	r-333	2275	1233	64	64
+time_wave.png	Time Wave	시간의 물결	r-334	520	908	64	64
+infernal_shade.png	Infernal Shade	지옥의 유령	r-335	1820	973	64	64
+assemble_abomination.png	Assemble Abomination	어보미네이션 합체	r-336	1625	843	64	64
+drain_life.png	Drain Life	생명 흡수	r-337	585	778	64	64
+multishot.png	Multishot	다중 발사	r-341	520	323	64	64
+fire_trail.png	Fire Trail	화염의 자취	r-180	845	323	64	64
+ballista.png	Ballista	노포	r-342	715	453	64	64
+time_bubble.png	Time Bubble	시간의 방울	r-345	65	648	64	64
+burning_patch.png	Burning Patch	불타는 구획	r-136	65	908	64	64
+death_seal.png	Death Seal	죽음의 봉인	r-346	130	518	64	64
+wave_of_death.png	Wave of Death	죽음의 파도	r-347	650	583	64	64
+death_seal.png	Death Seal	죽음의 봉인	r-348	65	1948	64	64
+summon_healing_totem.png	Summon Healing Totem	치유 토템 소환	r-172	838	2208	64	64
+void_cleave.png	Void Cleave	공허 가르기	r-351	260	648	64	64
+shield_bash.png	Shield Bash	방패 강타	r-352	2145	453	64	64
+dark_quiver.png	Dark Quiver	어둠의 화살집	r-354	1488	129	64	64
+summon_volatile_zombie.png	Summon Volatile Zombie	파열 좀비 소환	r-357	2080	323	64	64
+summon_skeleton_vanguard.png	Summon Skeleton Vanguard	해골 선봉대 소환	r-358	1151	2208	64	64
+dread_shade.png	Dread Shade	공포의 유령	r-20	1931	2208	64	64
+tail_slam.png	Tail Slam	꼬리 치기	r-359	2080	2273	64	64
+recruit_mercenary.png	Recruit Mercenary	용병 기용	r-70	1430	908	64	64
+devouring_souls.png	Devouring Souls	포식 영혼	r-218	650	713	64	64
+soul_reave.png	Soul Reave	영혼 가르기	r-253	1885	1233	64	64
+double_strike.png	Double Strike	이중 맹공	r-360	325	1948	64	64
+bone_eruption.png	Bone Eruption	뼈 분출	r-226	520	518	64	64
+alluvion_wave.png	Alluvion Wave	앨루비언 웨이브	r-361	1699	1818	64	64
+dragonflame_nova.png	Dragonflame Nova	드래곤플레임 노바	r-92	650	1493	64	64
+firebrand.png	Firebrand	불의 낙인	r-362	1364	1948	64	64
+flame_wave.png	Flame Wave	불꽃 파도	r-363	2275	2013	64	64
+shield_shatter.png	Shield Shatter	방패 파편	r-232	780	518	64	64
+force_wave.png	Force Wave	무력 파도	r-364	1216	2208	64	64
+puncture.png	Puncture	천공	r-365	1950	2273	64	64
+flurry.png	Flurry	질풍	r-281	520	843	64	64
+decoy.png	Decoy	유인물	r-366	2145	2143	64	64
+detonate_decoy.png	Detonate Decoy	유인물 폭발	r-48	1690	1103	64	64
+explosives.png	Explosives	폭발물	r-187	1950	453	64	64
+sonic_wave.png	Sonic Wave	음파	r-324	2145	1103	64	64
+dancing_strikes.png	Dancing Strikes	검무 맹공	r-367	1518	2078	64	64
+dancing_strikes.png	Dancing Strikes	검무 맹공	r-367	1518	2078	64	64
+dancing_strikes.png	Dancing Strikes	검무 맹공	r-367	1518	2078	64	64
+dancing_strikes.png	Dancing Strikes	검무 맹공	r-367	1518	2078	64	64
+chakram.png	Chakram	차크람	r-226	520	518	64	64
+puncture.png	Puncture	천공	r-365	1950	2273	64	64
+poison_burst.png	Poison Burst	독 폭발	r-295	585	843	64	64
+lethal_mirage.png	Lethal Mirage	치명의 신기루	r-64	1300	908	64	64
+create_shadow.png	Create Shadow	그림자 생성	r-202	1949	1948	64	64
+lightning_tendrils.png	Lightning Tendrils	번개 덩굴손	r-153	1940	583	64	64
+synchronized_strike.png	Synchronized Strike	동시 공격	r-370	1411	2208	64	64
+hail_of_arrows.png	Hail of Arrows	화살비	r-371	1885	2273	64	64
+cinder_strike.png	Cinder Strike	잉걸불 맹공	r-373	1323	2078	64	64
+cinder_strike.png	Cinder Strike	잉걸불 맹공	r-375	1764	1818	64	64
+cinder_strike.png	Cinder Strike	잉걸불 맹공	r-376	1299	1948	64	64
+cinder_strike.png	Cinder Strike	잉걸불 맹공	r-373	1323	2078	64	64
+burning_dagger.png	Burning Dagger	불타는 단검	r-377	130	2078	64	64
+burning_dagger_cone.png	Burning Dagger Cone	화염 단검 원뿔	r-377	130	2078	64	64
+rain_of_arrows.png	Rain of Arrows	화살 세례	r-378	1495	713	64	64
+volatile_flask.png	Volatile Flask	휘발성 플라스크	r-24	1950	1883	64	64
+summon_storm_crows.png	Summon Storm Crows	폭풍 까마귀 소환	r-379	2265	583	64	64
+crowstorm.png	Crowstorm	까마귀 폭풍	r-380	260	388	64	64
+summon_warcry_totem.png	Summon Warcry Totem	함성 토템 소환	r-304	1560	1558	64	64
+mana_arc.png	Mana Arc	마나 아크	r-313	1755	1688	64	64
+tidal_wave.png	Tidal Wave	조석파	r-361	1699	1818	64	64
+oblivion_wave.png	Oblivion Wave	망각의 파도	r-382	130	323	64	64
+decimate.png	Decimate	섬멸	r-383	1748	129	64	64
+ice_spike.png	Ice Spike	얼음 스파이크	r-137	260	1038	64	64
+coagulated_blood.png	Coagulated Blood	응혈	r-230	455	713	64	64
+multistrike.png	Multistrike	다중 공격	r-384	390	583	64	64
+javelin.png	Javelin	투창	r-385	325	518	64	64
+lightning_spear.png	Lightning Spear	번개 창	r-385	325	518	64	64
+holy_trail.png	Holy Trail	성스러운 자취	r-386	455	648	64	64
+upheaval.png	Upheaval	격동	r-389	1754	1948	64	64
+swarmblade_form.png	Swarmblade Form	스웜블레이드 형태	r-390	455	583	64	64
+human_form.png	Human Form	인간 형태	r-391	260	518	64	64
+summon_hive.png	Summon Hive	군집 소환	r-392	650	648	64	64
+summon_locust.png	Summon Locust	메뚜기 소환	r-394	195	388	64	64
+dive.png	Dive	급강하	r-395	520	453	64	64
+armblade_slash.png	Armblade Slash	암블레이드 베기	r-396	2275	258	64	64
+swarm_strike.png	Swarm Strike	곤충떼 맹공	r-397	1943	129	64	64
+locust_swarm.png	Locust Swarm	메뚜기떼	r-397	1943	129	64	64
+armblade_slash.png	Armblade Slash	암블레이드 베기	r-398	1583	2078	64	64
+umbral_blades.png	Umbral Blades	음영검	r-399	2015	2143	64	64
+umbral_blades.png	Umbral Blades	음영검	r-401	1453	2078	64	64
+umbral_blades.png	Umbral Blades	음영검	r-402	1281	2208	64	64
+prism_shard.png	Prism Shard	프리즘 조각	r-149	380	2078	64	64
+summon_upheaval_totem.png	Summon Upheaval Totem	격동 토템 소환	r-304	1560	1558	64	64
+shockwave.png	Shockwave	충격파	r-194	780	323	64	64
+shatter.png	Shatter	분쇄	r-409	975	583	64	64
+shatter_totem.png	Shatter Totem	토템 분쇄	r-410	1234	1948	64	64
+blade_explosion.png	Blade Explosion	칼 폭발	r-24	1950	1883	64	64
+phoenix_flames.png	Phoenix Flames	불사조 불꽃	r-363	2275	2013	64	64
+ensnaring_roots.png	Ensnaring Roots	올가미 뿌리	r-176	640	1948	64	64
+temporal_shift.png	Temporal Shift	시간 도약	r-413	1829	1818	64	64
+dragonfire.png	Dragonfire	드래곤파이어	r-335	1820	973	64	64
+soulfire_shield.png	Soulfire Shield	영혼불 방패	r-414	2275	2143	64	64
+burning_amber.png	Burning Amber	불타는 호박	r-415	1388	2078	64	64
+attack.png	Attack	공격	r-166	773	2208	64	64
+explosives.png	Explosives	폭발물	r-187	1950	453	64	64
+fire_arrow.png	Fire Arrow	화염 화살	r-213	2168	2078	64	64
+ice_bite.png	Ice Bite	얼음 물기	r-22	1690	2143	64	64
+wordless_invocation.png	Wordless Invocation	글 없는 주문	r-416	1346	2208	64	64
+crackling_glyph.png	Crackling Glyph	터지는 문양	r-417	1820	2273	64	64
+lightning_explosion.png	Lightning Explosion	번개 폭발	r-92	650	1493	64	64
+ball_lightning.png	Ball Lightning	벼락 덩어리	r-419	65	388	64	64
+dancing_sparks.png	Dancing Sparks	춤추는 불꽃	r-421	585	583	64	64
+trinity_of_elements.png	Trinity of Elements	원소의 삼위일체	r-422	1430	713	64	64
+tri_beam_cold.png	Tri-Beam Cold	삼중 빛줄기 냉기	r-232	780	518	64	64
+tri_beam_cold.png	Tri-Beam Cold	삼중 빛줄기 냉기	r-232	780	518	64	64
+antipode_of_mesembria.png	Antipode of Mesembria	메젠브레아의 안티포드	r-37	2103	2078	64	64
+grand_prism_nova.png	Grand Prism Nova	큰 프리즘 노바	r-142	903	129	64	64
+covenant_arc.png	Covenant Arc	맹약 아크	r-423	130	648	64	64
+unvar_s_shatter_bolt.png	Unvar's Shatter Bolt	운바르의 분쇄 화살	r-424	845	453	64	64
+reowyn_s_frostguard.png	Reowyn's Frostguard	레오윈의 서리 보호	r-349	1894	1818	64	64
+lightning_web.png	Lightning Web	번개 웹	r-302	1755	1298	64	64
+rune_lightning.png	Rune Lightning	룬 번개	r-153	1940	583	64	64
+echoes_of_thunder.png	Echoes of Thunder	번개의 에코	r-426	1293	129	64	64
+echoes_of_thunder.png	Echoes of Thunder	번개의 에코	r-12	130	453	64	64
+il_kir_s_storm_star.png	Il'kir's Storm Star	일키르의 폭풍 스타	r-428	65	2208	64	64
+spark.png	Spark	불꽃	r-150	1625	453	64	64
+rune_hail.png	Rune Hail	룬 우박	r-369	195	323	64	64
+rune_shard.png	Rune Shard	룬 조각	r-424	845	453	64	64
+fireball.png	Fireball	파이어볼	r-135	2200	713	64	64
+rune_hail.png	Rune Hail	룬 우박	r-369	195	323	64	64
+vilatria_s_storm_lance.png	Vilatria's Storm Lance	빌라트리아의 폭풍	r-429	1193	2078	64	64
+stygian_beam.png	Stygian Beam	저승의 빛줄기	r-431	2015	323	64	64
+unvar_s_ice_glyph.png	Unvar's Ice Glyph	운바르의 얼음 문양	r-432	1618	129	64	64
+revik_s_blizzard.png	Revik's Blizzard	레빅의 눈보라	r-143	1170	323	64	64
+dragons__breath.png	Dragons' Breath	드래곤의 숨결	r-433	390	323	64	64
+rime_spiral.png	Rime Spiral	흰서리 나선	r-434	2275	453	64	64
+winds_of_eos.png	Winds of Eos	에오스의 바람	r-435	910	583	64	64
+wave_of_frost.png	Wave of Frost	서리 웨이브	r-436	1105	713	64	64
+grand_prism_nova.png	Grand Prism Nova	큰 프리즘 노바	r-142	903	129	64	64
+elemental_tide.png	Elemental Tide	원소의 물결	r-285	195	1233	64	64
+freezing_cascade.png	Freezing Cascade	얼어붙은 폭포	r-437	195	648	64	64
+reowyn_s_doomfrost.png	Reowyn's Doomfrost	레오윈의 종말 서리	r-436	1105	713	64	64
+reowyn_s_doomfrost.png	Reowyn's Doomfrost	레오윈의 종말 서리	r-154	389	2338	64	63
+swirling_frost.png	Swirling Frost	서리 소용돌이	r-438	1559	1948	64	64
+twin_embers.png	Twin Embers	쌍생의 엠버	r-74	1365	1103	64	64
+capsule_man_basic_projectile.png	Capsule Man Basic Projectile	캡슐 맨 기본 발사체	r-135	2200	713	64	64
+unvar_s_eruption.png	Unvar's Eruption	운바르의 분출	r-439	2145	2013	64	64
+hydra_orb.png	Hydra Orb	히드라 오브	r-135	2200	713	64	64
+summon_tempest_totem.png	Summon Tempest Totem	폭풍 토템 소환	r-304	1560	1558	64	64
+aergon_s_greater_fireball.png	Aergon's Greater Fireball	애르곤의 강력한 파이어볼	r-440	1235	1168	64	64
+unvar_s_eternal_embers.png	Unvar's Eternal Embers	운바르의 영원한 엠버	r-441	65	1298	64	64
+aergon_s_mirror_bolt.png	Aergon's Mirror Bolt	애르곤의 미러 볼트	r-375	1764	1818	64	64
+aergon_s_plasma_arc.png	Aergon's Plasma Arc	애르곤의 플라즈마 아크	r-442	2210	1103	64	64
+plasma_blast.png	Plasma Blast	플라즈마 폭발	r-443	1235	1038	64	64
+sea_of_sparks.png	Sea of Sparks	불꽃의 바다	r-444	1755	843	64	64
+lightning_detonation.png	Lightning Detonation	번개 폭파	r-92	650	1493	64	64
+plasma_orb.png	Plasma Orb	플라즈마 오브	r-402	1281	2208	64	64
+lightning_arc.png	Lightning Arc	번개 아크	r-153	1940	583	64	64
+realms_of_mayhem.png	Realms of Mayhem	소란의 영역	r-359	2080	2273	64	64
+capsuleman_explosion_with_delayer.png	CapsuleMan Explosion With Delayer	캡슐 맨 지연 폭발	r-92	650	1493	64	64
+capsuleman_explosion_with_delayer.png	CapsuleMan Explosion With Delayer	캡슐 맨 지연 폭발	r-92	650	1493	64	64
+antipode_of_the_rune_slinger.png	Antipode of the Rune Slinger	룬 궁수의 안티포드	r-445	455	778	64	64
+runebolt.png	Runebolt	룬볼트	r-446	650	908	64	64
+runebolt.png	Runebolt	룬볼트	r-446	650	908	64	64
+runebolt.png	Runebolt	룬볼트	r-446	650	908	64	64
+hydrahedron.png	Hydrahedron	히드라헤드론	r-92	650	1493	64	64
+hydra_orb.png	Hydra Orb	히드라 오브	r-135	2200	713	64	64
+igneous_rain.png	Igneous Rain	화성된 비	r-447	1690	973	64	64
+igneous_rain.png	Igneous Rain	화성된 비	r-103	1300	1428	64	64
+runic_invocation.png	Runic Invocation	룬 주문 호출	r-448	260	1818	64	64
+runebolt.png	Runebolt	룬볼트	r-446	650	908	64	64
+glyph_of_dominion.png	Glyph of Dominion	지배의 문양	r-417	1820	2273	64	64
+runebolt.png	Runebolt	룬볼트	r-449	1560	1688	64	64
+rune_explosion.png	Rune Explosion	룬 폭발	r-92	650	1493	64	64
+capsuleman_basic_explosion.png	CapsuleMan Basic Explosion	캡슐 맨 기본 폭발	r-92	650	1493	64	64
+capsuleman_basic_explosion.png	CapsuleMan Basic Explosion	캡슐 맨 기본 폭발	r-92	650	1493	64	64
+capsuleman_basic_explosion.png	CapsuleMan Basic Explosion	캡슐 맨 기본 폭발	r-92	650	1493	64	64
+runestone.png	Runestone	룬석	r-449	1560	1688	64	64
+runic_detonation.png	Runic Detonation	룬의 폭파	r-450	1560	843	64	64
+rune_ember.png	Rune Ember	룬 불씨	r-451	520	778	64	64
+runic_burst.png	Runic Burst	룬의 폭발	r-452	585	908	64	64
+frost_claw.png	Frost Claw	서리 발톱	r-453	1885	973	64	64
+ice_spiral.png	Ice Spiral	얼음 나선	r-137	260	1038	64	64
+stygian_beam.png	Stygian Beam	저승의 빛줄기	r-431	2015	323	64	64
+falconry.png	Falconry	매 훈련법	r-454	1430	1168	64	64
+wing_burst.png	Wing Burst	날개 폭발	r-456	2275	1103	64	64
+summon_falcon.png	Summon Falcon	매 소환	r-72	1105	843	64	64
+explosive_trap.png	Explosive Trap	폭발 트랩	r-457	1040	1038	64	64
+net.png	Net	올가미	r-120	2275	843	64	64
+feather_knives.png	Feather Knives	매 깃털의 칼날	r-458	2015	1298	64	64
+caltrops.png	Caltrops	마름쇠	r-459	130	1428	64	64
+defiling_nova.png	Defiling Nova	디필링 노바	r-462	1625	1558	64	64
+flame_whip.png	Flame Whip	플레임 위프	r-463	2275	1623	64	64
+net_trap.png	Net Trap	올가미 트랩	r-464	1820	1298	64	64
+featherfall.png	Featherfall	깃털폴	r-465	390	1428	64	64
+gathering_storm.png	Gathering Storm	폭풍 집합	r-466	195	1558	64	64
+gathering_storm.png	Gathering Storm	폭풍 집합	r-466	195	1558	64	64
+featherstorm.png	Featherstorm	깃털 폭풍	r-467	1885	1428	64	64
+sky_beam.png	Sky Beam	하늘 빛줄기	r-203	1885	2013	64	64
+summon_ancestral_sabertooth.png	Summon Ancestral Sabertooth	선조 세이버투스를 소환	r-468	1170	1168	64	64
+necrotic_beams.png	Necrotic Beams	괴사 빛줄기	r-431	2015	323	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+evade.png	Evade	회피	r-469	195	1298	64	64
+voidwinter_bolt.png	Voidwinter Bolt	공허 겨울 화살	r-470	1885	1298	64	64
+terrify.png	Terrify	두려움	r-17	2275	518	64	64
+summon_crab.png	Summon Crab	게를 소환하기	r-471	195	1428	64	64
+spirit_step.png	Spirit Step	영혼 발걸음	r-128	1300	1298	64	64
+doom_pulse.png	Doom Pulse	재앙의 펄스	r-470	1885	1298	64	64
+void_bolt.png	Void Bolt	공허 화살	r-470	1885	1298	64	64
+fire_burst.png	Fire Burst	화염 폭발	r-24	1950	1883	64	64
+shade_eruption.png	Shade Eruption	음영 폭발	r-24	1950	1883	64	64
+lightning_bolt.png	Lightning Bolt	번개 화살	r-472	390	1558	64	64
+heartseeker.png	Heartseeker	심장을 찾는 자	r-473	1820	1428	64	64
+forge_flames.png	Forge Flames	화염 아우라	r-144	1690	453	64	64
+summon_historic_minion.png	Summon Historic Minion	역사적인 미니언 소환하기	r-474	65	1818	64	64
+temporal_rift.png	Temporal Rift	시간 균열	r-413	1829	1818	64	64
+eternal_arrow.png	Eternal Arrow	영원한 화살	r-473	1820	1428	64	64
+stomp.png	Stomp	발구르기	r-237	520	388	64	64
+aura_of_rot.png	Aura Of Rot	부패한 아우라	r-295	585	843	64	64
+summon_anurok.png	Summon Anurok	아누록을 소환	r-38	65	258	64	64
+primordial_blood.png	Primordial Blood	원시의 피	r-129	715	1428	64	64
+flame_breath.png	Flame Breath	불꽃 숨결	r-452	585	908	64	64
+thorn_burst.png	Thorn Burst	가시 폭발	r-152	1820	713	64	64
+teleport.png	Teleport	순간 이동	r-128	1300	1298	64	64
+summon_primal_tyrannosaur.png	Summon Primal Tyrannosaur	원시 티라노사우루스를 소환하기	r-478	1495	843	64	64
+bladestorm.png	Bladestorm	칼 폭풍	r-479	650	778	64	64
+shadow_rend.png	Shadow Rend	그림자 절단	r-480	1560	1038	64	64
+shadow_rend.png	Shadow Rend	그림자 절단	r-480	1560	1038	64	64
+ghost_blade.png	Ghost Blade	유령 칼	r-481	1885	1103	64	64
+blade_detonation.png	Blade Detonation	칼 폭파	r-412	195	1948	64	64
+bone_splinters.png	Bone Splinters	뼈 토막	r-226	520	518	64	64
+splinter_nova.png	Splinter Nova	파편 노바	r-226	520	518	64	64
+ice_thorns.png	Ice Thorns	얼음 가시	r-149	380	2078	64	64
+acid_flask.png	Acid Flask	산성 플라스크	r-161	502	2078	64	64
+profane_orb.png	Profane Orb	불경한 오브	r-991	910	2273	64	64
