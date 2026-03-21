@@ -1074,55 +1074,60 @@ document.querySelectorAll('.toc a').forEach(a => {
   }
   
   function buildUniquePopup(tip, en) {
-    var h = "";
+    var h = '<div class="tt-u-header">';
     if (tip.sp) {
-      var mx = Math.max(Math.abs(tip.sp[2]), Math.abs(tip.sp[3]));
-      var sc = 80 / mx;
-      var bsw = 3529 * sc, bsh = 3470 * sc, bx = tip.sp[0] * sc, by = tip.sp[1] * sc;
-      h += '<div style="width:' + (Math.abs(tip.sp[2])*sc) + 'px;height:' + (Math.abs(tip.sp[3])*sc) + 'px;background:url(https://www.lastepochtools.com/data/version140/db/res/ffce45425d07007cec794e0d051efb5c.webp) ' + bx + 'px ' + by + 'px/' + bsw + 'px ' + bsh + 'px no-repeat;margin:0 auto 6px"></div>';
+      var scale = 56 / Math.max(tip.sp[2], tip.sp[3]);
+      var bgSizeW = Math.round(3529 * scale);
+      var bgSizeH = Math.round(3470 * scale);
+      var bgX = Math.round(tip.sp[0] * scale);
+      var bgY = Math.round(tip.sp[1] * scale);
+      h += '<div class="tt-u-icon" style="background-size:' + bgSizeW + 'px ' + bgSizeH + 'px;background-position:-' + bgX + 'px -' + bgY + 'px"></div>';
     }
-    h += '<div style="color:#b4722d;font-weight:bold;font-size:14px">' + (tip.ko || en) + '</div>';
-    if (tip.base) h += '<div style="color:#888;font-size:11px;margin-bottom:4px">' + tip.base + '</div>';
+    h += '<div class="tt-u-info">';
+    h += '<div class="tt-u-name">' + tip.ko + '</div>';
+    h += '<div class="tt-u-base">' + (tip.base || '') + '</div>';
+    if (tip.set) h += '<div class="tt-u-set-tag">\uc138\ud2b8 \uc544\uc774\ud15c</div>';
+    h += '</div></div>';
     if (tip.implicits && tip.implicits.length > 0) {
-      h += '<div style="color:#aaa;font-size:10px;margin-top:4px;padding-bottom:2px;border-bottom:1px solid #444">\uAE30\uBCF8 \uC18D\uC131</div>';
+      h += '<div style="color:#aaa;font-size:10px;margin-top:4px;padding-bottom:2px;border-bottom:1px solid #444">기본 속성</div>';
       tip.implicits.forEach(function(im) { h += '<div style="color:#7c7cef;font-size:11px;padding:2px 4px;margin:1px 0;background:rgba(124,124,239,0.06);border-radius:3px">' + im + '</div>'; });
     }
     if (tip.mods && tip.mods.length > 0) {
-      h += '<div style="color:#aaa;font-size:10px;margin-top:4px;padding-bottom:2px;border-bottom:1px solid #444">\uACE0\uC720 \uC635\uC158</div>';
-      tip.mods.forEach(function(md) { h += '<div style="color:#c8c8c8;font-size:11px;padding:3px 4px;margin:2px 0;background:rgba(200,200,200,0.06);border-left:2px solid #555;border-radius:2px">' + (md || "") + '</div>'; });
+      h += '<div style="color:#aaa;font-size:10px;margin-top:4px;padding-bottom:2px;border-bottom:1px solid #444">고유 옵션</div>';
+      tip.mods.forEach(function(md) { h += '<div style="color:#c8c8c8;font-size:11px;padding:3px 4px;margin:2px 0;background:rgba(200,200,200,0.06);border-left:2px solid #555;border-radius:2px">' + (md || '') + '</div>'; });
     }
-    if (tip.tips && tip.tips.length > 0 && !(tip.mods && tip.mods.length > 0)) {
-      tip.tips.forEach(function(t) { h += '<div style="color:#c8c8c8;font-size:11px;padding:3px 4px;margin:2px 0;background:rgba(200,200,200,0.06);border-left:2px solid #555;border-radius:2px">' + formatDesc(t) + '</div>'; });
+    if (tip.lore) h += '<div class="tt-u-lore">"' + tip.lore + '"</div>';
+    if (tip.tips && tip.tips.length > 0) {
+      h += '<div class="tt-u-mods">';
+      tip.tips.forEach(function(t) {
+        h += '<div class="tt-u-mod">' + t.replace(/\[(\d+),\s*(\d+),\s*\d+\]/g, '<span class="mod-val">$1-$2</span>') + '</div>';
+      });
+      h += '</div>';
     }
-    if (tip.lore) h += '<div style="color:#b4722d;font-style:italic;font-size:10px;margin-top:4px;border-top:1px solid #444;padding-top:3px">' + tip.lore + '</div>';
     return h;
   }
   
   function buildNodePopup(tip, en) {
-    var h = "";
-    var tl = {skill: "\uc2a4\ud0ac", node: "\ub178\ub4dc"};
-    var tc = tip.type === "skill" ? "skill" : "node";
-    h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">';
-    h += '<div><span style="color:#e8c56d;font-weight:bold;font-size:14px">' + (tip.ko || en) + '</span>';
-    h += ' <span style="color:#999;font-size:11px">(' + en + ')</span></div>';
-    h += '<span style="background:' + (tc==="skill" ? "#2a4a2a" : "#3a3a5a") + ';color:' + (tc==="skill" ? "#6c6" : "#aaf") + ';font-size:10px;padding:2px 6px;border-radius:3px">' + (tl[tip.type]||tip.type) + '</span>';
+    var typeLabels = {skill: '\uc2a4\ud0ac', node: '\ub178\ub4dc'};
+    var typeLabel = typeLabels[tip.type] || '';
+    var typeClass = tip.type || '';
+    
+    var h = '<div class="tt-header">';
+    h += '<div class="tt-name">' + tip.ko + ' <span class="tt-en">(' + en + ')</span></div>';
+    h += '<span class="tt-type ' + typeClass + '">' + typeLabel + '</span>';
     h += '</div>';
-    if (tip.tree) h += '<div style="color:#888;font-size:11px;margin-bottom:4px">' + tip.tree + ' \ud2b8\ub9ac</div>';
+    if (tip.tree) h += '<div class="tt-tree">' + tip.tree + ' \ud2b8\ub9ac</div>';
+    if (tip.mp) h += '<div class="tt-meta">\ub9e5\uc2a4 ' + tip.mp + '\ud3ec\uc778\ud2b8</div>';
     if (tip.stats && tip.stats.length > 0) {
+      h += '<div class="tt-stats">';
       tip.stats.forEach(function(st) {
-        var sn = st.name || st.n || "";
-        var sv = st.value || st.v || "";
-        var sd = st.downside || st.d || false;
-        if (sn || sv) {
-          h += '<div style="display:flex;justify-content:space-between;padding:2px 4px;margin:1px 0;background:rgba(200,200,200,0.06);border-radius:2px">';
-          h += '<span style="color:#c8c8c8;font-size:11px">' + sn + '</span>';
-          if (sv) h += '<span style="color:' + (sd ? "#c44" : "#6c6") + ';font-size:11px;font-weight:bold">' + sv + '</span>';
-          h += '</div>';
-        }
+        var cls = (st.d||st.downside) ? 'stat-down' : 'stat-up';
+        var val = (st.v||st.value) ? '<span class="stat-val ' + cls + '">' + (st.v||st.value) + '</span> ' : '';
+        h += '<div class="tt-stat">' + val + (st.n||st.name) + '</div>';
       });
+      h += '</div>';
     }
-    if (tip.mp) h += '<div style="color:#aaa;font-size:10px;margin-top:3px">\ub9e5\uc2a4 ' + tip.mp + '\ud3ec\uc778\ud2b8</div>';
-    if (tip.desc) h += '<div style="color:#aaa;font-size:11px;margin-top:4px;border-top:1px solid #444;padding-top:3px">' + formatDesc(tip.desc) + '</div>';
+    if (tip.desc) h += '<div class="tt-desc">' + formatDesc(tip.desc) + '</div>';
     return h;
   }
   
