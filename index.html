@@ -1105,111 +1105,38 @@ document.querySelectorAll('.toc a').forEach(a => {
     return h;
   }
   function buildNodePopup(tip, en) {
+    var h = '';
     var typeLabels = {skill: '\uc2a4\ud0ac', node: '\ub178\ub4dc'};
-    var typeLabel = typeLabels[tip.type] || '';
-    var typeClass = tip.type || '';
-    
-    var h = '<div class="tt-header">';
-    h += '<div class="tt-name">' + tip.ko + ' <span class="tt-en">(' + en + ')</span></div>';
-    h += '<span class="tt-type ' + typeClass + '">' + typeLabel + '</span>';
+    var typeClass = tip.type === 'skill' ? 'skill' : 'node';
+    h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">';
+    h += '<div><span style="color:#e8c56d;font-weight:bold;font-size:14px">' + (tip.ko || en) + '</span>';
+    h += ' <span style="color:#999;font-size:11px">(' + en + ')</span></div>';
+    h += '<span style="background:' + (typeClass==='skill'?'#2a4a2a':'#3a3a5a') + ';color:' + (typeClass==='skill'?'#6c6':'#aaf') + ';font-size:10px;padding:2px 6px;border-radius:3px">' + (typeLabels[tip.type]||tip.type) + '</span>';
     h += '</div>';
-    if (tip.tree) h += '<div class="tt-tree">' + tip.tree + ' \ud2b8\ub9ac</div>';
-    if (tip.mp) h += '<div class="tt-meta">\ub9e5\uc2a4 ' + tip.mp + '\ud3ec\uc778\ud2b8</div>';
-    if (tip.stats && tip.stats.length > 0) {
-      h += '<div class="tt-stats">';
-      tip.stats.forEach(function(st) {
-        var cls = st.d ? 'stat-down' : 'stat-up';
-        var val = st.v ? '<span class="stat-val ' + cls + '">' + st.v + '</span> ' : '';
-        h += '<div class="tt-stat">' + val + st.n + '</div>';
-      });
-      h += '</div>';
+    if (tip.tree) {
+      h += '<div style="color:#888;font-size:11px;margin-bottom:4px">' + tip.tree + ' \ud2b8\ub9ac</div>';
     }
-    if (tip.desc) h += '<div class="tt-desc">' + formatDesc(tip.desc) + '</div>';
+    if (tip.stats && tip.stats.length > 0) {
+      tip.stats.forEach(function(st) {
+        var name = st.name || st.n || '';
+        var val = st.value || st.v || '';
+        var down = st.downside || st.d || false;
+        if (name || val) {
+          h += '<div style="display:flex;justify-content:space-between;padding:2px 4px;margin:1px 0;background:rgba(200,200,200,0.06);border-radius:2px">';
+          h += '<span style="color:#c8c8c8;font-size:11px">' + name + '</span>';
+          if (val) h += '<span style="color:' + (down ? '#c44' : '#6c6') + ';font-size:11px;font-weight:bold">' + val + '</span>';
+          h += '</div>';
+        }
+      });
+    }
+    if (tip.mp) {
+      h += '<div style="color:#aaa;font-size:10px;margin-top:3px">\ub9e5\uc2a4 ' + tip.mp + '\ud3ec\uc778\ud2b8</div>';
+    }
+    if (tip.desc) {
+      h += '<div style="color:#aaa;font-size:11px;margin-top:4px;border-top:1px solid #444;padding-top:3px">' + formatDesc(tip.desc) + '</div>';
+    }
     return h;
   }
-  
-  // 스킬 변경점 섹션 + 유니크/세트 변경 섹션에 적용
-  var sectionIds = [
-    'rogue-new','rogue-changes','mage-changes','acolyte-changes','primalist-changes','sentinel-changes',
-    'unique-changes','set-changes'
-  ];
-  var count = 0;
-  
-  sectionIds.forEach(function(secId) {
-    var section = document.getElementById(secId);
-    if (!section) return;
-    
-    var walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT, null, false);
-    var textNodes = [];
-    while (walker.nextNode()) textNodes.push(walker.currentNode);
-    
-    textNodes.forEach(function(node) {
-      var text = node.textContent;
-      if (!text || !node.parentNode) return;
-      
-      var regex = /\(([A-Z][a-zA-Z\s\'\-]{2,50})\)/g;
-      var match;
-      var matches = [];
-      while ((match = regex.exec(text)) !== null) {
-        var en = match[1].trim();
-        if (tips[en]) {
-          matches.push({s: match.index, e: match.index + match[0].length, en: en, tip: tips[en]});
-        }
-      }
-      if (matches.length === 0) return;
-      
-      var frag = document.createDocumentFragment();
-      var lastIdx = 0;
-      
-      matches.forEach(function(m) {
-        if (m.s > lastIdx) frag.appendChild(document.createTextNode(text.substring(lastIdx, m.s)));
-        
-        var span = document.createElement('span');
-        span.className = 'tt';
-        span.textContent = text.substring(m.s, m.e);
-        
-        var popup = document.createElement('div');
-        popup.className = m.tip.type === 'unique' ? 'tt-unique-popup' : 'tt-popup';
-        
-        if (m.tip.type === 'unique') {
-          popup.innerHTML = buildUniquePopup(m.tip, m.en);
-        } else {
-          popup.innerHTML = buildNodePopup(m.tip, m.en);
-        }
-        
-        span.appendChild(popup);
-        
-        span.addEventListener('mouseenter', function(e) {
-          var rect = span.getBoundingClientRect();
-          var popupEl = span.querySelector('.tt-popup, .tt-unique-popup');
-          if (rect.top > 300) {
-            popupEl.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
-            popupEl.style.top = '';
-          } else {
-            popupEl.style.top = (rect.bottom + 8) + 'px';
-            popupEl.style.bottom = '';
-          }
-          popupEl.style.left = Math.max(10, Math.min(rect.left - 60, window.innerWidth - 360)) + 'px';
-        });
-        
-        frag.appendChild(span);
-        lastIdx = m.e;
-        count++;
-      });
-      
-      if (lastIdx < text.length) frag.appendChild(document.createTextNode(text.substring(lastIdx)));
-      node.parentNode.replaceChild(frag, node);
-    });
-  });
-  
-  console.log('Tooltips applied: ' + count);
-  
-  var toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.innerHTML = '<span class="toast-icon">\ud83d\udca1</span> \uc601\ubb38\uba85\uc5d0 \ub9c8\uc6b0\uc2a4\ub97c \uc62c\ub9ac\uba74 \uc2a4\ud0ac/\ub178\ub4dc/\uc720\ub2c8\ud06c \uc124\uba85\uc744 \ud655\uc778\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4';
-  document.body.appendChild(toast);
-  
-  var toastShown = false;
   function showToast() {
     if (toastShown) return;
     toastShown = true;
