@@ -463,6 +463,141 @@ a:hover { text-decoration: underline; }
   line-height: 1.6;
 }
 
+
+/* 유니크 카드 */
+.unique-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.unique-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  transition: border-color 0.2s;
+}
+.unique-card:hover { border-color: var(--gold-dim); }
+
+.unique-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  margin-bottom: 6px;
+}
+.unique-en {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.unique-details {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.unique-detail {
+  padding: 2px 0 2px 14px;
+  position: relative;
+}
+.unique-detail::before {
+  content: "·";
+  position: absolute;
+  left: 2px;
+  color: var(--gold-dim);
+}
+
+
+/* 유니크 툴팁 */
+.tt-unique-popup {
+  display: none;
+  position: fixed;
+  width: 340px;
+  max-width: 90vw;
+  background: linear-gradient(180deg, #1a1520 0%, #12101a 100%);
+  border: 1px solid #6a5a3a;
+  border-radius: 8px;
+  padding: 0;
+  z-index: 10000;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.8);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tt:hover .tt-unique-popup { display: block; }
+
+.tt-u-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(201,150,58,0.08);
+  border-bottom: 1px solid rgba(201,150,58,0.15);
+}
+
+.tt-u-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background-image: url('https://www.lastepochtools.com/data/version140/db/res/f25dd4afe884b1bad605ef38fa08dabf.webp');
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  image-rendering: auto;
+  border: 1px solid rgba(201,150,58,0.3);
+}
+
+.tt-u-info { flex: 1; min-width: 0; }
+
+.tt-u-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c9963a;
+  line-height: 1.3;
+}
+
+.tt-u-base {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.tt-u-set-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: #1a2a1a;
+  color: #4a8;
+  border: 1px solid #2a4a3a;
+  margin-top: 4px;
+}
+
+.tt-u-lore {
+  padding: 8px 12px;
+  font-size: 11px;
+  font-style: italic;
+  color: #8a8070;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.tt-u-mods {
+  padding: 8px 12px 12px;
+}
+
+.tt-u-mod {
+  font-size: 12px;
+  color: #a8c0d8;
+  padding: 3px 0;
+  line-height: 1.5;
+}
+
+.tt-u-mod .mod-val {
+  color: #79a7ea;
+}
+
 /* 스크롤바 */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -807,12 +942,67 @@ a:hover { text-decoration: underline; }
 
 <section id="unique-changes">
 <h2>유니크 수치 변경</h2>
-<p>🏆 유니크 아이템 수치 변경 (Uniques)</p><p>▸ 골렘케이지 (<b>Aaron's Will)</b>: </p><p>     모든 하수인 스킬 +2(기존 +1). 뼈 파편 (Bone Shatter) 쿨타임 1초(기존 3초)</p><p><br>▸ 범람 (<b>Alluvion)</b>: </p><p>    냉기/번개 근접 스킬 각각 +1 추가. 조석파 (Tidal Wave) 쿨타임 1초(기존 2초)</p><p><br>▸ 스킨의 군단 (<b>Army of Skin)</b>: </p><p>    근접 공격속도 6-13%(기존 13-26%), </p><p>    긁힘 (Excoriation) 중첩당 근접 피해 +5(기존 +6). 잠재력 유효 레벨 70(기존 49)</p><p><br>▸ 겨울의 적수(<b>Bane of Winter)</b>: </p><p>    공허의 겨울 화살 (Voidwinter Bolt) 치명타 배수 미적용 냉기 확률 10%당 +12%(기존 1%), </p><p>    미적용 시간 부패 확률 10%당 피해 3% 증가(기존 1%), 2초당 최대 8회 발동(기존 3회)</p><p><br>▸ 전투마법사의 노력 (<b>Battlemage's Endeavour)</b>: </p><p>    근접 공격 적중 시 <b>추가 연쇄 2회</b>를 가진 번개 폭발 시전 45-75% 확률(기존: 추가 연쇄 없음)</p><p><br>▸ 푸른 깃털 밴드(<b>Bluefeather Band)</b>: </p><p>    잠재력 유효 레벨 50(기존 70)</p><p><br>▸ 천상의 파멸(<b>Celestial Doom)</b>: </p><p>    재앙의 펄스(Doom Pulse) 쿨타임 각 주문 유형별 2초(기존 4초)</p><p><br>▸ 아누록의 합창(<b>Chorus of the Anurok)</b>: </p><p>    원시 아누록(Primal Anuroks) 피해 33% 감소</p><p><br>▸ 용화율령(<b>Dragonflame Edict)</b>: </p><p>    모든 하수인 스킬 +1 추가, 드래곤플레임 노바(Dragonflame Nova) 초당 최대 3회(기존 1초 쿨타임)</p><p><br>▸ 진화의 종말(<b>Evolution's End)</b>: </p><p>    모든 스킬 레벨 +1-2 삭제 → 하수인 전 저항 +15% 추가</p><p><br>▸ 광전사의 송곳니(<b>Fangs of the Berserker)</b>: </p><p>    힘당 광란 효과 0.5%(기존 1%), 광란 중 받는 피해 3-6%(기존 9-15%)</p><p><br>▸ 수수께끼의 파편(<b>Fragment of the Enigma)</b>: <br>    지능당 전류 충전 번개 피해 +1(기존 2), 폭발 범위 100-200%(기존 120-240%), <br>    근접 공격 스파크 차지 피해 150-175% 증가(기존 65-125%)</p><p><br>▸ 포르모수스의 얼어붙은 눈(<b>Frozen Eyes of Formosus)</b>: </p><p>    하수인 쿨타임 회복속도 20-40% 증가 추가</p><p>▸ 선구자의 바늘 <b>Harbinger's Needle</b>: 더 이상 선물 불가</p><p><br>▸ 태초의 조화(<b>Harmony of the First)</b>: </p><p>    잠재력 유효 레벨 40(기존 60)</p><p>▸ 하이브 마인드(<b>Hive Mind)</b>: </p><p>    유인물 폭발 시 벌 3-4마리(기존 6-10). </p><p>    민첩당 벌 독/원소 관통 4-6% 추가</p><p>▸ 텅 빈 손가락(<b>Hollow Finger)</b>: </p><p>    본인과 하수인 냉기 저항 +7-13%(기존: 본인만), </p><p>    물리 저항 +7-13% 추가</p><p>▸ 로기의 허기(<b>Logi's Hunger)</b>: </p><p>    하수인 공격/시전 속도 12-24% 증가 추가</p><p>▸ 창백한 황소의 맨틀(<b>Mantle of the Pale Ox)</b>: </p><p>    본인과 하수인 체력 8-12%(기존 12-18%)</p><p>▸ 무관심의 가면(<b>Mask of Indifference)</b>: </p><p>    잠재력 유효 레벨 50(기존 70)</p><p>▸ 옴니스<b>Omnis</b>: </p><p>    모든 스킬 +1-2(기존 +1)</p><p><br>▸ 원시 지식의 영속성(<b>Permanence of Primal Knowledge)</b>: </p><p>    요구/유효 레벨 50(기존 79)</p><p>▸ 약탈자의 금(<b>Pillager's Gold)</b>: </p><p>    적중 시 불타는 단검 초당 최대 2회(기존 1초 쿨타임)</p><p>▸ 원시의 운율(<b>Primal Cadence)</b>: </p><p>    과잉 피해 체력 흡수 6-15%(기존 4-9%), </p><p>    전 속성 +6-15(기존 4-9), </p><p>    본인과 하수인 치명타 확률 +6-15%(기존 4-9%)</p><p>▸ 까마귀의 비상(<b>Ravens' Rise)</b>: 하수인 시전 속도 20-28% 증가 추가</p><p><br>▸ 라케시스의 시들음(<b>Blight of Lachesis)</b>: </p><p>    하수인 피해 140-210%(기존 100-170%), </p><p>    하수인 스킬 감전 확률 +70-110%(기존 40-70%)</p><p>▸ 비트라실의 뿌리(<b>Roots of Vithrasil)</b>: </p><p>    이동속도 15-21%(기존 15%). </p><p>    스프리건 형태 이동 불가/발사체 +2-3/체력 재생 삭제 → "정지 시 0.5초마다 발아 중첩(최대 4). </p><p>    이동/해제 시 중첩 소실", "발아 중첩당 영혼 가시 발사체 +1",</p><p>    "발아 중첩당 체력 재생 +20-26". 잠재력 유효 레벨 70(기존 80)</p><p>▸ 부서진 사슬<b>부서진 사슬(Shattered Chains)</b>: </p><p>    파멸 중첩당 근접 <b>공허</b> 피해 5% 증가(기존: 근접 피해)</p><p><br>▸ 산의 영혼(<b>Soul of the Mountain)</b>: </p><p>    조화력 12당 최대 계곡 영혼 +1(기존 15당)</p><p><br>▸ 말라트로스의 척추(<b>Spine of Malatros)</b>: </p><p>    저승의 균열 트리의 더러운 협곡(Valley of Defilement) 시 불꽃 채찍이 독으로 전환, 피의 협곡(Blood Gulch) 시 물리로 전환</p><p><br>▸ 영혼목질부(<b>Spirit Xylem)</b>: </p><p>    조화력당 체력/마나 +3-6(기존 2-4). </p><p>    잠재력 유효 레벨 50(기존 70)</p><p><br>▸ <b>Storm Sprites</b>: </p><p>   조화당 치명타 배수 +2%, </p><p>    힘당 피해 4% 증가/체력 +10/치명타 확률 4% 증가 추가</p><p><br>▸ <b>검 캐처(Sword Catcher)</b>: </p><p>    광란 시 근접 피해 +20-30(기존 39-60), </p><p>    광란 효과 20-40%(기존 39-60%)</p><p><br>▸ 폭풍의 나락(<b>Tempest Maw)</b>: </p><p>    Storm Sprite 소환 6초당 최대 2회(기존 1회). 이도류 시 소환 수에 영향</p><p>▸ 눈부신 빛의 숲(<b>Thicket of Blinding Light)</b>: </p><p>    피해/실명 최대 사거리 8m(기존 12m). </p><p>    피해가 거리에 따라 선형 스케일링(8m에서 10% → 4m에서 100%)<br>▸ 가시껍질(<b>Thornshell)</b>: </p><p>    조화력당 고정 반사 피해 3-6% 증가(기존 5-9%)</p><p><br>▸ 진실의 유리(<b>Truesight Glass)</b>: </p><p>    잠재력 유효 레벨 50(기존 76)</p><p><br>▸ 폭군의 두개골(<b>Tyrant's Skull)</b>: </p><p>    하수인 스킬 레벨 +1-2(기존 2-3), </p><p>    힘당 티라노사우르스 근접 피해 +2(기존 +3)</p><p><br>▸ 볼카누스(<b>Volcanus)</b>: </p><p>    근접 적중 시 용암조각(용암 조각(Magma Shards)) 30% 확률(기존 15%), 1</p><p>    2m 내 적을 타겟</p><p><br>▸ 숫돌망치(<b>Whetstone Gavel)</b>: </p><p>    전 속성 +8-18(기존 5-13). </p><p>    잠재력 유효 레벨 60(기존 78)</p><p><br>▸ 야생불 잿불(<b>Wildfire Embers)</b>: </p><p>    점화 확산/야생불 정령 생성이 초당 2회(기존 1회). </p><p>    야생불 정령확률 25-30%(기존 30-36%). 확산이 야생불 정령 생성 전에 발생</p><p><br>▸ 불화의 날개<b>불화의 날개(Wings of Discord)</b>: </p><p>    회피 24-52% 증가 추가</p><p><br>▸ 잘못된 워프<b>Wrongwarp</b>: </p><p>    이식/순간이동 쿨타임 회복속도 5-10% 삭제 → 이식/순간이동에 <b>최소 3초 쿨타임</b> 추가</p>
+<div class="unique-cards">
+<div class="unique-card"><div class="unique-name">골렘케이지 <span class="unique-en">(Aaron's Will)</span></div><div class="unique-details"><div class="unique-detail">모든 하수인 스킬 +2(기존 +1). 뼈 파편 (Bone Shatter) 쿨타임 1초(기존 3초)</div></div></div>
+<div class="unique-card"><div class="unique-name">범람 <span class="unique-en">(Alluvion)</span></div><div class="unique-details"><div class="unique-detail">냉기/번개 근접 스킬 각각 +1 추가. 조석파 (Tidal Wave) 쿨타임 1초(기존 2초)</div></div></div>
+<div class="unique-card"><div class="unique-name">스킨의 군단 <span class="unique-en">(Army of Skin)</span></div><div class="unique-details"><div class="unique-detail">근접 공격속도 6-13%(기존 13-26%),</div><div class="unique-detail">긁힘 (Excoriation) 중첩당 근접 피해 +5(기존 +6). 잠재력 유효 레벨 70(기존 49)</div></div></div>
+<div class="unique-card"><div class="unique-name">겨울의 적수 <span class="unique-en">(Bane of Winter)</span></div><div class="unique-details"><div class="unique-detail">공허의 겨울 화살 (Voidwinter Bolt) 치명타 배수 미적용 냉기 확률 10%당 +12%(기존 1%),</div><div class="unique-detail">미적용 시간 부패 확률 10%당 피해 3% 증가(기존 1%), 2초당 최대 8회 발동(기존 3회)</div></div></div>
+<div class="unique-card"><div class="unique-name">전투마법사의 노력 <span class="unique-en">(Battlemage's Endeavour)</span></div><div class="unique-details"><div class="unique-detail">근접 공격 적중 시 추가 연쇄 2회를 가진 번개 폭발 시전 45-75% 확률(기존: 추가 연쇄 없음)</div></div></div>
+<div class="unique-card"><div class="unique-name">푸른 깃털 밴드 <span class="unique-en">(Bluefeather Band)</span></div><div class="unique-details"><div class="unique-detail">잠재력 유효 레벨 50(기존 70)</div></div></div>
+<div class="unique-card"><div class="unique-name">천상의 파멸 <span class="unique-en">(Celestial Doom)</span></div><div class="unique-details"><div class="unique-detail">재앙의 펄스(Doom Pulse) 쿨타임 각 주문 유형별 2초(기존 4초)</div></div></div>
+<div class="unique-card"><div class="unique-name">아누록의 합창 <span class="unique-en">(Chorus of the Anurok)</span></div><div class="unique-details"><div class="unique-detail">원시 아누록(Primal Anuroks) 피해 33% 감소</div></div></div>
+<div class="unique-card"><div class="unique-name">용화율령 <span class="unique-en">(Dragonflame Edict)</span></div><div class="unique-details"><div class="unique-detail">모든 하수인 스킬 +1 추가, 드래곤플레임 노바(Dragonflame Nova) 초당 최대 3회(기존 1초 쿨타임)</div></div></div>
+<div class="unique-card"><div class="unique-name">진화의 종말 <span class="unique-en">(Evolution's End)</span></div><div class="unique-details"><div class="unique-detail">모든 스킬 레벨 +1-2 삭제 → 하수인 전 저항 +15% 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">광전사의 송곳니 <span class="unique-en">(Fangs of the Berserker)</span></div><div class="unique-details"><div class="unique-detail">힘당 광란 효과 0.5%(기존 1%), 광란 중 받는 피해 3-6%(기존 9-15%)</div></div></div>
+<div class="unique-card"><div class="unique-name">수수께끼의 파편 <span class="unique-en">(Fragment of the Enigma)</span></div><div class="unique-details"><div class="unique-detail">지능당 전류 충전 번개 피해 +1(기존 2), 폭발 범위 100-200%(기존 120-240%),</div><div class="unique-detail">근접 공격 스파크 차지 피해 150-175% 증가(기존 65-125%)</div></div></div>
+<div class="unique-card"><div class="unique-name">포르모수스의 얼어붙은 눈 <span class="unique-en">(Frozen Eyes of Formosus)</span></div><div class="unique-details"><div class="unique-detail">하수인 쿨타임 회복속도 20-40% 증가 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">선구자의 바늘 Harbinger's Needle</div><div class="unique-details"><div class="unique-detail">더 이상 선물 불가</div></div></div>
+<div class="unique-card"><div class="unique-name">태초의 조화 <span class="unique-en">(Harmony of the First)</span></div><div class="unique-details"><div class="unique-detail">잠재력 유효 레벨 40(기존 60)</div></div></div>
+<div class="unique-card"><div class="unique-name">하이브 마인드 <span class="unique-en">(Hive Mind)</span></div><div class="unique-details"><div class="unique-detail">유인물 폭발 시 벌 3-4마리(기존 6-10).</div><div class="unique-detail">민첩당 벌 독/원소 관통 4-6% 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">텅 빈 손가락 <span class="unique-en">(Hollow Finger)</span></div><div class="unique-details"><div class="unique-detail">본인과 하수인 냉기 저항 +7-13%(기존: 본인만),</div><div class="unique-detail">물리 저항 +7-13% 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">로기의 허기 <span class="unique-en">(Logi's Hunger)</span></div><div class="unique-details"><div class="unique-detail">하수인 공격/시전 속도 12-24% 증가 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">창백한 황소의 맨틀 <span class="unique-en">(Mantle of the Pale Ox)</span></div><div class="unique-details"><div class="unique-detail">본인과 하수인 체력 8-12%(기존 12-18%)</div></div></div>
+<div class="unique-card"><div class="unique-name">무관심의 가면 <span class="unique-en">(Mask of Indifference)</span></div><div class="unique-details"><div class="unique-detail">잠재력 유효 레벨 50(기존 70)</div></div></div>
+<div class="unique-card"><div class="unique-name">옴니스Omnis</div><div class="unique-details"><div class="unique-detail">모든 스킬 +1-2(기존 +1)</div></div></div>
+<div class="unique-card"><div class="unique-name">원시 지식의 영속성 <span class="unique-en">(Permanence of Primal Knowledge)</span></div><div class="unique-details"><div class="unique-detail">요구/유효 레벨 50(기존 79)</div></div></div>
+<div class="unique-card"><div class="unique-name">약탈자의 금 <span class="unique-en">(Pillager's Gold)</span></div><div class="unique-details"><div class="unique-detail">적중 시 불타는 단검 초당 최대 2회(기존 1초 쿨타임)</div></div></div>
+<div class="unique-card"><div class="unique-name">원시의 운율 <span class="unique-en">(Primal Cadence)</span></div><div class="unique-details"><div class="unique-detail">과잉 피해 체력 흡수 6-15%(기존 4-9%),</div><div class="unique-detail">전 속성 +6-15(기존 4-9),</div><div class="unique-detail">본인과 하수인 치명타 확률 +6-15%(기존 4-9%)</div></div></div>
+<div class="unique-card"><div class="unique-name">까마귀의 비상 <span class="unique-en">(Ravens' Rise)</span></div><div class="unique-details"><div class="unique-detail">하수인 시전 속도 20-28% 증가 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">라케시스의 시들음 <span class="unique-en">(Blight of Lachesis)</span></div><div class="unique-details"><div class="unique-detail">하수인 피해 140-210%(기존 100-170%),</div><div class="unique-detail">하수인 스킬 감전 확률 +70-110%(기존 40-70%)</div></div></div>
+<div class="unique-card"><div class="unique-name">비트라실의 뿌리 <span class="unique-en">(Roots of Vithrasil)</span></div><div class="unique-details"><div class="unique-detail">이동속도 15-21%(기존 15%).</div><div class="unique-detail">스프리건 형태 이동 불가/발사체 +2-3/체력 재생 삭제 → "정지 시 0.5초마다 발아 중첩(최대 4).</div><div class="unique-detail">이동/해제 시 중첩 소실", "발아 중첩당 영혼 가시 발사체 +1",</div><div class="unique-detail">"발아 중첩당 체력 재생 +20-26". 잠재력 유효 레벨 70(기존 80)</div></div></div>
+<div class="unique-card"><div class="unique-name">부서진 사슬부서진 사슬 <span class="unique-en">(Shattered Chains)</span></div><div class="unique-details"><div class="unique-detail">파멸 중첩당 근접 공허 피해 5% 증가(기존: 근접 피해)</div></div></div>
+<div class="unique-card"><div class="unique-name">산의 영혼 <span class="unique-en">(Soul of the Mountain)</span></div><div class="unique-details"><div class="unique-detail">조화력 12당 최대 계곡 영혼 +1(기존 15당)</div></div></div>
+<div class="unique-card"><div class="unique-name">말라트로스의 척추 <span class="unique-en">(Spine of Malatros)</span></div><div class="unique-details"><div class="unique-detail">저승의 균열 트리의 더러운 협곡(Valley of Defilement) 시 불꽃 채찍이 독으로 전환, 피의 협곡(Blood Gulch) 시 물리로 전환</div></div></div>
+<div class="unique-card"><div class="unique-name">영혼목질부 <span class="unique-en">(Spirit Xylem)</span></div><div class="unique-details"><div class="unique-detail">조화력당 체력/마나 +3-6(기존 2-4).</div><div class="unique-detail">잠재력 유효 레벨 50(기존 70)</div></div></div>
+<div class="unique-card"><div class="unique-name">Storm Sprites</div><div class="unique-details"><div class="unique-detail">조화당 치명타 배수 +2%,</div><div class="unique-detail">힘당 피해 4% 증가/체력 +10/치명타 확률 4% 증가 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">검 캐처 <span class="unique-en">(Sword Catcher)</span></div><div class="unique-details"><div class="unique-detail">광란 시 근접 피해 +20-30(기존 39-60),</div><div class="unique-detail">광란 효과 20-40%(기존 39-60%)</div></div></div>
+<div class="unique-card"><div class="unique-name">폭풍의 나락 <span class="unique-en">(Tempest Maw)</span></div><div class="unique-details"><div class="unique-detail">Storm Sprite 소환 6초당 최대 2회(기존 1회). 이도류 시 소환 수에 영향</div></div></div>
+<div class="unique-card"><div class="unique-name">눈부신 빛의 숲 <span class="unique-en">(Thicket of Blinding Light)</span></div><div class="unique-details"><div class="unique-detail">피해/실명 최대 사거리 8m(기존 12m).</div><div class="unique-detail">피해가 거리에 따라 선형 스케일링(8m에서 10% → 4m에서 100%)</div></div></div>
+<div class="unique-card"><div class="unique-name">가시껍질 <span class="unique-en">(Thornshell)</span></div><div class="unique-details"><div class="unique-detail">조화력당 고정 반사 피해 3-6% 증가(기존 5-9%)</div></div></div>
+<div class="unique-card"><div class="unique-name">진실의 유리 <span class="unique-en">(Truesight Glass)</span></div><div class="unique-details"><div class="unique-detail">잠재력 유효 레벨 50(기존 76)</div></div></div>
+<div class="unique-card"><div class="unique-name">폭군의 두개골 <span class="unique-en">(Tyrant's Skull)</span></div><div class="unique-details"><div class="unique-detail">하수인 스킬 레벨 +1-2(기존 2-3),</div><div class="unique-detail">힘당 티라노사우르스 근접 피해 +2(기존 +3)</div></div></div>
+<div class="unique-card"><div class="unique-name">볼카누스 <span class="unique-en">(Volcanus)</span></div><div class="unique-details"><div class="unique-detail">근접 적중 시 용암조각(용암 조각(Magma Shards)) 30% 확률(기존 15%), 1</div><div class="unique-detail">2m 내 적을 타겟</div></div></div>
+<div class="unique-card"><div class="unique-name">숫돌망치 <span class="unique-en">(Whetstone Gavel)</span></div><div class="unique-details"><div class="unique-detail">전 속성 +8-18(기존 5-13).</div><div class="unique-detail">잠재력 유효 레벨 60(기존 78)</div></div></div>
+<div class="unique-card"><div class="unique-name">야생불 잿불 <span class="unique-en">(Wildfire Embers)</span></div><div class="unique-details"><div class="unique-detail">점화 확산/야생불 정령 생성이 초당 2회(기존 1회).</div><div class="unique-detail">야생불 정령확률 25-30%(기존 30-36%). 확산이 야생불 정령 생성 전에 발생</div></div></div>
+<div class="unique-card"><div class="unique-name">불화의 날개불화의 날개 <span class="unique-en">(Wings of Discord)</span></div><div class="unique-details"><div class="unique-detail">회피 24-52% 증가 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">잘못된 워프Wrongwarp</div><div class="unique-details"><div class="unique-detail">이식/순간이동 쿨타임 회복속도 5-10% 삭제 → 이식/순간이동에 최소 3초 쿨타임 추가</div></div></div>
+</div>
 </section>
 
 <section id="set-changes">
 <h2>세트 아이템 변경</h2>
-<p>세트 아이템 변경</p><p><i>리포지드 세트 아이템(세트아이템에서 접사를 뽑아 아이템에 박은 것)</i></p><p><i>이 이제 실제 세트 아이템과 동일한 색상을 사용합니다.</i></p><p>▶ 잊힌 기사의 세트 (Forgotten Knight)</p><p>▸ <b>Blade</b>: 공격/시전 속도 20%(기존 15%). </p><p>   리포지드 티어 1~8: 공허 피해 25-300%(기존 20-200%)<br>▸ <b>Defiance</b>: 블록 확률 +15-25%(기존 14-21%). </p><p>   리포지드 티어 1~8: 공허 피해 40-320%(기존 30-240%)</p><p>▶ 가스파르의 세트 (Gaspar's)</p><p>▸ <b>Decimate</b> 능력: 기본 범위 15% 증가, </p><p>   조화력당 치명타 배수 +4%, 지능당 치명타 확률 4% 증가 추가<br>▸ <b>Decimate</b> 쿨타임: 3초(기존 4초)</p><p>▶ 할바르의 세트 (Halvar's)</p><p>▸ <b>Stand</b>: 최근 냉기 주문 직접 시전 시 물리 주문 피해 35-70% 증가, </p><p>   주문으로 적 처치 시 가속 확률 20-40%(기존 15-30%), </p><p>   이동속도 12-18% 추가<br>▸ <b>Pledge</b>: 주문 물리 피해 +30-45(기존 25-40), </p><p>   조화력 +8-14(기존 7-10)<br>▸ <b>산의 마지막 선물(Last Gift of the Mountain)</b>: 주문 적중 시 방어도 파쇄 확률 75-150%(기존 50-100%), </p><p>   물리 주문 직접 시전 시 주문 냉기 피해 35-70% 증가, 체력 +20-60 추가</p><p>▶ 호출자의 세트 (Invoker's)</p><p>▸ <b>Static Touch</b>: 주문 번개 피해 +15(기존 +13)<br>▸ <b>Scorching Grasp</b>: 화염 주문 시전 속도 21%(기존 13%)<br>▸ <b>Frozen Heart</b>: 냉기 주문 시전 속도 21%(기존 13%)<br>▸ 2세트 보너스: 원소 시전 속도 15%(기존 13%)<br>▸ 3세트 보너스: 화염/번개/냉기 주문 각각 +2(기존 +1)</p><p>▶ 마지막 곰의 세트 (Last Bear)</p><p>▸ <b>Fury</b>: 후려치기(Swipe) +1 추가<br>▸ <b>Lament</b>: 함성(Warcry) +2 추가<br>▸ <b>Scorn</b>: 분노의 도약(Fury Leap) +1 추가<br>▸ 2세트 보너스: 동료 피해 10% 증가, 동료 체력 10% 증가 추가<br>▸ 3세트 보너스 변경: 적 처치 시 대지의 양상(Aspect of the Boar) 획득 확률 20%(새 효과)</p><p>▶ 루비 송곳니 세트 (Ruby Fang)</p><p>▸ <b>Cleaver</b>: 적중 시 근접 화염 피해 +8-12 추가, 점화 확률 +30-50%(기존 20-40%)<br>▸ <b>Aegis</b>: 블록 시 화염 저항 +15-25% 추가<br>▸ 2세트 보너스: 점화된 적에게 피해 15% 증가(기존 10%)</p><p>▶ 부서진 장창 세트 (Shattered Lance)</p><p>▸ <b>Shard</b>: 근접 물리 피해 +12-20(기존 8-15), 근접 공격속도 10-18%(기존 8-14%)<br>▸ <b>Fragments</b>: 주문 피해 +15-25 추가, 마나 재생 15-25% 증가 추가<br>▸ 2세트 보너스: 근접과 주문 모두 물리 관통 +10% 추가</p><p>▶ 고유 해골의 세트 (Sinathia's)</p><p>▸ <b>Dying Breath</b>: 괴저 피해 +10-18(기존 8-14), 하수인 피해 15-25%(기존 12-20%)<br>▸ <b>Resurrection</b>: 블록 효과 20-35%(기존 15-28%), 하수인 체력 재생 +8-14 추가<br>▸ 2세트 보너스: 하수인 피해 15% 증가(기존 10%), 하수인 체력 15% 증가 추가</p><p>▶ 태양 단조 세트 (Sunforged)</p><p>▸ <b>Greathelm</b>: 방어도 250-350(기존 200-300), 방어도 25-35% 증가(기존 20-30%)<br>▸ <b>Cuirass</b>: 방어도 +600-850(기존 500-800), 화염 저항 +60-85%(기존 50-80%), 단조 무기당 화염 피해 20-40%(기존 15-25%)<br>▸ <b>Greathammer</b>: 단조 무기당 근접 화염 피해 +15-30(기존 10-25), 단조 무기당 점화 확률 30-60%(기존 25-42%)</p><p>▶ 아이템 일반</p><p>▸ 일부 기본 무기 비주얼 업데이트 (지팡이, 방패, 한손 도끼, 창 등)<br>▸ <b>아이템 희귀도 사운드:</b> 가치 있는 아이템 드랍 시 전용 사운드 재생 — 높은 잠재력 유니크, 다중 고티어 엑잘티드, 보스 전용 유니크 등을 소리로 구분 가능<br>▸ 유니크/세트/레전더리 아이템의 루트빔 크기 감소</p>
+<p class="change-note">리포지드 세트 아이템(세트아이템에서 접사를 뽑아 아이템에 박은 것) 이 이제 실제 세트 아이템과 동일한 색상을 사용합니다.</p>
+<div class="unique-cards">
+<div class="unique-card"><div class="unique-name">잊힌 기사의 세트 <span class="unique-en">(Forgotten Knight)</span></div><div class="unique-details"><div class="unique-detail">Blade: 공격/시전 속도 20%(기존 15%). 리포지드 티어 1~8: 공허 피해 25-300%(기존 20-200%)</div><div class="unique-detail">Defiance: 블록 확률 +15-25%(기존 14-21%). 리포지드 티어 1~8: 공허 피해 40-320%(기존 30-240%)</div></div></div>
+<div class="unique-card"><div class="unique-name">가스파르의 세트 <span class="unique-en">(Gaspar's)</span></div><div class="unique-details"><div class="unique-detail">Decimate 능력: 기본 범위 15% 증가, 조화력당 치명타 배수 +4%, 지능당 치명타 확률 4% 증가 추가</div><div class="unique-detail">Decimate 쿨타임: 3초(기존 4초)</div></div></div>
+<div class="unique-card"><div class="unique-name">할바르의 세트 <span class="unique-en">(Halvar's)</span></div><div class="unique-details"><div class="unique-detail">Stand: 최근 냉기 주문 직접 시전 시 물리 주문 피해 35-70% 증가, 주문으로 적 처치 시 가속 확률 20-40%(기존 15-30%), 이동속도 12-18% 추가</div><div class="unique-detail">Pledge: 주문 물리 피해 +30-45(기존 25-40), 조화력 +8-14(기존 7-10)</div><div class="unique-detail">산의 마지막 선물(Last Gift of the Mountain): 주문 적중 시 방어도 파쇄 확률 75-150%(기존 50-100%), 물리 주문 직접 시전 시 주문 냉기 피해 35-70% 증가, 체력 +20-60 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">호출자의 세트 <span class="unique-en">(Invoker's)</span></div><div class="unique-details"><div class="unique-detail">Static Touch: 주문 번개 피해 +15(기존 +13)</div><div class="unique-detail">Scorching Grasp: 화염 주문 시전 속도 21%(기존 13%)</div><div class="unique-detail">Frozen Heart: 냉기 주문 시전 속도 21%(기존 13%)</div><div class="unique-detail">2세트 보너스: 원소 시전 속도 15%(기존 13%)</div><div class="unique-detail">3세트 보너스: 화염/번개/냉기 주문 각각 +2(기존 +1)</div></div></div>
+<div class="unique-card"><div class="unique-name">마지막 곰의 세트 <span class="unique-en">(Last Bear)</span></div><div class="unique-details"><div class="unique-detail">Fury: 후려치기(Swipe) +1 추가</div><div class="unique-detail">Lament: 함성(Warcry) +2 추가</div><div class="unique-detail">Scorn: 분노의 도약(Fury Leap) +1 추가</div><div class="unique-detail">2세트 보너스: 동료 피해 10% 증가, 동료 체력 10% 증가 추가</div><div class="unique-detail">3세트 보너스 변경: 적 처치 시 대지의 양상(Aspect of the Boar) 획득 확률 20%(새 효과)</div></div></div>
+<div class="unique-card"><div class="unique-name">루비 송곳니 세트 <span class="unique-en">(Ruby Fang)</span></div><div class="unique-details"><div class="unique-detail">Cleaver: 적중 시 근접 화염 피해 +8-12 추가, 점화 확률 +30-50%(기존 20-40%)</div><div class="unique-detail">Aegis: 블록 시 화염 저항 +15-25% 추가</div><div class="unique-detail">2세트 보너스: 점화된 적에게 피해 15% 증가(기존 10%)</div></div></div>
+<div class="unique-card"><div class="unique-name">부서진 장창 세트 <span class="unique-en">(Shattered Lance)</span></div><div class="unique-details"><div class="unique-detail">Shard: 근접 물리 피해 +12-20(기존 8-15), 근접 공격속도 10-18%(기존 8-14%)</div><div class="unique-detail">Fragments: 주문 피해 +15-25 추가, 마나 재생 15-25% 증가 추가</div><div class="unique-detail">2세트 보너스: 근접과 주문 모두 물리 관통 +10% 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">고유 해골의 세트 <span class="unique-en">(Sinathia's)</span></div><div class="unique-details"><div class="unique-detail">Dying Breath: 괴저 피해 +10-18(기존 8-14), 하수인 피해 15-25%(기존 12-20%)</div><div class="unique-detail">Resurrection: 블록 효과 20-35%(기존 15-28%), 하수인 체력 재생 +8-14 추가</div><div class="unique-detail">2세트 보너스: 하수인 피해 15% 증가(기존 10%), 하수인 체력 15% 증가 추가</div></div></div>
+<div class="unique-card"><div class="unique-name">태양 단조 세트 <span class="unique-en">(Sunforged)</span></div><div class="unique-details"><div class="unique-detail">Greathelm: 방어도 250-350(기존 200-300), 방어도 25-35% 증가(기존 20-30%)</div><div class="unique-detail">Cuirass: 방어도 +600-850(기존 500-800), 화염 저항 +60-85%(기존 50-80%), 단조 무기당 화염 피해 20-40%(기존 15-25%)</div><div class="unique-detail">Greathammer: 단조 무기당 근접 화염 피해 +15-30(기존 10-25), 단조 무기당 점화 확률 30-60%(기존 25-42%)</div></div></div>
+</div>
 </section>
 
 <section id="enemy-updates">
@@ -883,20 +1073,68 @@ document.querySelectorAll('.toc a').forEach(a => {
       .replace(/\[(\d+[\.,]?\d*[%]?)\]/g, '<span class="num-ref">$1</span>');
   }
   
-  // 스킬 변경점 섹션에만 툴팁 적용
-  var skillSectionIds = ['rogue-new','rogue-changes','mage-changes','acolyte-changes','primalist-changes','sentinel-changes'];
+  function buildUniquePopup(tip, en) {
+    var h = '<div class="tt-u-header">';
+    if (tip.sp) {
+      var scale = 56 / Math.max(tip.sp[2], tip.sp[3]);
+      var bgSizeW = Math.round(3528 * scale);
+      var bgSizeH = Math.round(3471 * scale);
+      var bgX = Math.round(tip.sp[0] * scale);
+      var bgY = Math.round(tip.sp[1] * scale);
+      h += '<div class="tt-u-icon" style="background-size:' + bgSizeW + 'px ' + bgSizeH + 'px;background-position:-' + bgX + 'px -' + bgY + 'px"></div>';
+    }
+    h += '<div class="tt-u-info">';
+    h += '<div class="tt-u-name">' + tip.ko + '</div>';
+    h += '<div class="tt-u-base">' + (tip.base || '') + '</div>';
+    if (tip.set) h += '<div class="tt-u-set-tag">\uc138\ud2b8 \uc544\uc774\ud15c</div>';
+    h += '</div></div>';
+    if (tip.lore) h += '<div class="tt-u-lore">"' + tip.lore + '"</div>';
+    if (tip.tips && tip.tips.length > 0) {
+      h += '<div class="tt-u-mods">';
+      tip.tips.forEach(function(t) {
+        h += '<div class="tt-u-mod">' + t.replace(/\[(\d+),\s*(\d+),\s*\d+\]/g, '<span class="mod-val">$1-$2</span>') + '</div>';
+      });
+      h += '</div>';
+    }
+    return h;
+  }
+  
+  function buildNodePopup(tip, en) {
+    var typeLabels = {skill: '\uc2a4\ud0ac', node: '\ub178\ub4dc'};
+    var typeLabel = typeLabels[tip.type] || '';
+    var typeClass = tip.type || '';
+    
+    var h = '<div class="tt-header">';
+    h += '<div class="tt-name">' + tip.ko + ' <span class="tt-en">(' + en + ')</span></div>';
+    h += '<span class="tt-type ' + typeClass + '">' + typeLabel + '</span>';
+    h += '</div>';
+    if (tip.tree) h += '<div class="tt-tree">' + tip.tree + ' \ud2b8\ub9ac</div>';
+    if (tip.mp) h += '<div class="tt-meta">\ub9e5\uc2a4 ' + tip.mp + '\ud3ec\uc778\ud2b8</div>';
+    if (tip.stats && tip.stats.length > 0) {
+      h += '<div class="tt-stats">';
+      tip.stats.forEach(function(st) {
+        var cls = st.d ? 'stat-down' : 'stat-up';
+        var val = st.v ? '<span class="stat-val ' + cls + '">' + st.v + '</span> ' : '';
+        h += '<div class="tt-stat">' + val + st.n + '</div>';
+      });
+      h += '</div>';
+    }
+    if (tip.desc) h += '<div class="tt-desc">' + formatDesc(tip.desc) + '</div>';
+    return h;
+  }
+  
+  // 스킬 변경점 섹션 + 유니크/세트 변경 섹션에 적용
+  var sectionIds = [
+    'rogue-new','rogue-changes','mage-changes','acolyte-changes','primalist-changes','sentinel-changes',
+    'unique-changes','set-changes'
+  ];
   var count = 0;
   
-  skillSectionIds.forEach(function(secId) {
+  sectionIds.forEach(function(secId) {
     var section = document.getElementById(secId);
     if (!section) return;
     
-    var walker = document.createTreeWalker(
-      section,
-      NodeFilter.SHOW_TEXT,
-      null, false
-    );
-    
+    var walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT, null, false);
     var textNodes = [];
     while (walker.nextNode()) textNodes.push(walker.currentNode);
     
@@ -913,57 +1151,32 @@ document.querySelectorAll('.toc a').forEach(a => {
           matches.push({s: match.index, e: match.index + match[0].length, en: en, tip: tips[en]});
         }
       }
-      
       if (matches.length === 0) return;
       
       var frag = document.createDocumentFragment();
       var lastIdx = 0;
       
       matches.forEach(function(m) {
-        if (m.s > lastIdx) {
-          frag.appendChild(document.createTextNode(text.substring(lastIdx, m.s)));
-        }
+        if (m.s > lastIdx) frag.appendChild(document.createTextNode(text.substring(lastIdx, m.s)));
         
         var span = document.createElement('span');
         span.className = 'tt';
         span.textContent = text.substring(m.s, m.e);
         
         var popup = document.createElement('div');
-        popup.className = 'tt-popup';
+        popup.className = m.tip.type === 'unique' ? 'tt-unique-popup' : 'tt-popup';
         
-        var typeLabels = {skill: '\uc2a4\ud0ac', node: '\ub178\ub4dc', unique: '\uc720\ub2c8\ud06c'};
-        var typeLabel = typeLabels[m.tip.type] || '';
-        var typeClass = m.tip.type || '';
-        
-        var h = '<div class="tt-header">';
-        h += '<div class="tt-name">' + m.tip.ko + ' <span class="tt-en">(' + m.en + ')</span></div>';
-        h += '<span class="tt-type ' + typeClass + '">' + typeLabel + '</span>';
-        h += '</div>';
-        
-        if (m.tip.tree) h += '<div class="tt-tree">' + m.tip.tree + ' \ud2b8\ub9ac</div>';
-        
-        if (m.tip.maxPts) {
-          h += '<div class="tt-meta">\ub9e5\uc2a4 ' + m.tip.maxPts + '\ud3ec\uc778\ud2b8</div>';
+        if (m.tip.type === 'unique') {
+          popup.innerHTML = buildUniquePopup(m.tip, m.en);
+        } else {
+          popup.innerHTML = buildNodePopup(m.tip, m.en);
         }
         
-        if (m.tip.stats && m.tip.stats.length > 0) {
-          h += '<div class="tt-stats">';
-          m.tip.stats.forEach(function(st) {
-            var cls = st.downside ? 'stat-down' : 'stat-up';
-            var val = st.value ? '<span class="stat-val ' + cls + '">' + st.value + '</span> ' : '';
-            h += '<div class="tt-stat">' + val + st.name + '</div>';
-          });
-          h += '</div>';
-        }
-        
-        if (m.tip.desc) h += '<div class="tt-desc">' + formatDesc(m.tip.desc) + '</div>';
-        
-        popup.innerHTML = h;
         span.appendChild(popup);
         
         span.addEventListener('mouseenter', function(e) {
           var rect = span.getBoundingClientRect();
-          var popupEl = span.querySelector('.tt-popup');
+          var popupEl = span.querySelector('.tt-popup, .tt-unique-popup');
           if (rect.top > 300) {
             popupEl.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
             popupEl.style.top = '';
@@ -971,7 +1184,7 @@ document.querySelectorAll('.toc a').forEach(a => {
             popupEl.style.top = (rect.bottom + 8) + 'px';
             popupEl.style.bottom = '';
           }
-          popupEl.style.left = Math.max(10, Math.min(rect.left - 60, window.innerWidth - 350)) + 'px';
+          popupEl.style.left = Math.max(10, Math.min(rect.left - 60, window.innerWidth - 360)) + 'px';
         });
         
         frag.appendChild(span);
@@ -979,19 +1192,16 @@ document.querySelectorAll('.toc a').forEach(a => {
         count++;
       });
       
-      if (lastIdx < text.length) {
-        frag.appendChild(document.createTextNode(text.substring(lastIdx)));
-      }
-      
+      if (lastIdx < text.length) frag.appendChild(document.createTextNode(text.substring(lastIdx)));
       node.parentNode.replaceChild(frag, node);
     });
   });
   
-  console.log('Tooltips applied (skill sections only): ' + count);
+  console.log('Tooltips applied: ' + count);
   
   var toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = '<span class="toast-icon">\ud83d\udca1</span> \uc601\ubb38 \uc2a4\ud0ac\uba85\uc5d0 \ub9c8\uc6b0\uc2a4\ub97c \uc62c\ub9ac\uba74 \uc2a4\ud0ac/\ub178\ub4dc \uc124\uba85\uacfc \uc2a4\ud0ef\uc744 \ud655\uc778\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4';
+  toast.innerHTML = '<span class="toast-icon">\ud83d\udca1</span> \uc601\ubb38\uba85\uc5d0 \ub9c8\uc6b0\uc2a4\ub97c \uc62c\ub9ac\uba74 \uc2a4\ud0ac/\ub178\ub4dc/\uc720\ub2c8\ud06c \uc124\uba85\uc744 \ud655\uc778\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4';
   document.body.appendChild(toast);
   
   var toastShown = false;
@@ -1015,7 +1225,7 @@ document.querySelectorAll('.toc a').forEach(a => {
   document.querySelectorAll('.toc a').forEach(function(a) {
     a.addEventListener('click', function() {
       var href = a.getAttribute('href');
-      if (href && (href.includes('skill') || href.includes('rogue') || href.includes('mage') || href.includes('acolyte') || href.includes('primalist') || href.includes('sentinel'))) {
+      if (href && (href.includes('skill') || href.includes('rogue') || href.includes('mage') || href.includes('acolyte') || href.includes('primalist') || href.includes('sentinel') || href.includes('unique') || href.includes('set'))) {
         setTimeout(showToast, 500);
       }
     });
