@@ -214,6 +214,24 @@
   toast.innerHTML = '<span class="toast-icon">\ud83d\udca1</span> \uc601\ubb38\uba85\uc5d0 \ub9c8\uc6b0\uc2a4\ub97c \uc62c\ub9ac\uba74 \uc2a4\ud0ac/\ub178\ub4dc/\uc720\ub2c8\ud06c \uc124\uba85\uc744 \ud655\uc778\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4';
   document.body.appendChild(toast);
   var toastShown = false;
+  // === unique-en tooltip event listeners ===
+  document.querySelectorAll(".unique-en").forEach(function(span) {
+    var popup = span.querySelector(".tt-unique-popup");
+    if (!popup) return;
+    span.style.cursor = "pointer";
+    span.addEventListener("mouseenter", function(e) {
+      document.querySelectorAll(".tt-unique-popup, .tt-popup").forEach(function(p) { p.style.display = "none"; });
+      var rect = span.getBoundingClientRect();
+      popup.style.display = "block";
+      popup.style.left = rect.left + "px";
+      popup.style.top = (rect.bottom + 4) + "px";
+    });
+    span.addEventListener("mouseleave", function() {
+      popup.style.display = "none";
+    });
+  });
+
+
   function showToast() {
     if (toastShown) return;
     toastShown = true;

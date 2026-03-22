@@ -48,6 +48,7 @@ body::before {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
 /* TOC 사이드바 */
@@ -459,7 +460,7 @@ a:hover { text-decoration: underline; }
 /* 유니크 카드 */
 .unique-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 8px;
   margin-top: 12px;
 }
@@ -533,7 +534,7 @@ a:hover { text-decoration: underline; }
   width: 56px;
   height: 56px;
   flex-shrink: 0;
-  background-image: url('https://www.lastepochtools.com/data/version140/db/res/f25dd4afe884b1bad605ef38fa08dabf.webp');
+  background-image: url('https://www.lastepochtools.com/data/version140/db/res/ffce45425d07007cec794e0d051efb5c.webp');
   background-repeat: no-repeat;
   border-radius: 4px;
   image-rendering: auto;
