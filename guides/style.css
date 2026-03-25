@@ -1,0 +1,414 @@
+/* Last Epoch Korean Build Guide — Season 4 */
+:root {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --bg-section: #1c2128;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --border: #30363d;
+  --gold: #d4a017;
+  --silver: #888;
+  --accent: #58a6ff;
+  --link: #58a6ff;
+  --unique: #c98d1a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Header */
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.site-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-title:hover { color: var(--accent); }
+
+.nav {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.nav a:hover { color: var(--text); }
+
+/* Build Header */
+.build-header {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.tier-badge {
+  display: inline-block;
+  padding: 2px 12px;
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.tier-badge.tier-a {
+  border-color: var(--silver);
+  color: var(--silver);
+}
+
+.build-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.build-class {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.build-summary {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.source-link {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.source-link a { color: var(--accent); }
+
+/* Section cards */
+.section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+/* Skill steps */
+.skill-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-step:last-child { border-bottom: none; }
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.skill-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: var(--bg-section);
+}
+
+.skill-info {
+  flex: 1;
+}
+
+.skill-name-kr {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.skill-name-en {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.skill-note {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* Skill tree nodes */
+.node-list {
+  margin-top: 8px;
+  padding-left: 44px;
+}
+
+.node-item {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 3px 0;
+}
+
+.node-item .node-name {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Passive priorities */
+.passive-list {
+  list-style: none;
+  counter-reset: passive;
+}
+
+.passive-item {
+  counter-increment: passive;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.passive-item:last-child { border-bottom: none; }
+
+.passive-item::before {
+  content: counter(passive);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--text-muted);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 10px;
+  color: var(--text-muted);
+}
+
+.passive-name {
+  font-weight: 700;
+}
+
+.passive-note {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* Gear table */
+.gear-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.gear-table th {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.gear-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.gear-table tr:last-child td { border-bottom: none; }
+
+.unique-name {
+  font-weight: 700;
+  color: var(--unique);
+}
+
+.rare-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.gear-note {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* Tips */
+.tip-box {
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.tip-title {
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.tip-content {
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.tip-content:last-child { margin-bottom: 0; }
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 24px 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+.site-footer a { color: var(--accent); }
+
+/* === INDEX PAGE === */
+.hero {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.tier-section {
+  margin-bottom: 32px;
+}
+
+.tier-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tier-title .badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 2px solid;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.tier-title .badge-s { border-color: var(--gold); color: var(--gold); }
+.tier-title .badge-a { border-color: var(--silver); color: var(--silver); }
+
+/* Build cards (index) */
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.build-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+
+.build-card:hover {
+  border-color: var(--accent);
+}
+
+.build-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.build-card .card-class {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.build-card .card-summary {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .build-title { font-size: 20px; }
+  .hero h1 { font-size: 22px; }
+  .build-grid { grid-template-columns: 1fr; }
+  .gear-table { font-size: 13px; }
+  .site-header .container { flex-direction: column; align-items: flex-start; }
+}
